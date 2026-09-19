@@ -1,0 +1,61 @@
+.tipsbody{
+    /* background-color: red; */
+    width: 100%;
+    margin: 0;
+    height: auto;
+    padding-bottom: 3%;
+    display: flex;
+    background-image: url("../images/trains.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/trains.jpg"); }
+.part1,.part3{
+    /* background-color: yellow; */
+    width: 10%;}
+    /* height: 600px;} */
+.tipshead h2{
+    font-weight: bold;
+    color:white;}
+.tipshead p {
+    color: white;}
+.mainpart{
+    width: 80%;
+    /* background-color: green; */
+    height: 600px;}
+.tipshead{
+    height: 20%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;}
+.tipscards{
+    height: 80%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    padding-top: 1%;}
+.line1,.line2{
+    display: flex;
+    gap:3%}
+.pin{
+    width: 45%;
+    height: auto;
+    color: white;
+    background-color: rgb(0, 0, 85,.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;}
+.cardhead{
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.cardhead h5{
+    font-weight: bold;}
+
+

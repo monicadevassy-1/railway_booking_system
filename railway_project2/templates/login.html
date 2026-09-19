@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+{% block content %}
+
+<!-- from bootstrap -->
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+    <div class="loginbody">
+        <div class="firstcard"></div>
+        <div class="maincard ">
+            <div class="login-card card">
+                <form method="POST">
+                {% csrf_token %}
+                <div class="userpass">
+                    <div class="username">
+                        <label>Username</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="password">
+                        <label>Password</label>
+                        <input type="password" name="password">
+                    </div>
+                    <div class="loginbutton">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+                    <div class="login-links">
+                        <a href="{% url 'register' %}">Create Account</a>
+                    </div>    
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="thirdcard"></div>      
+        
+    </div>
+{% endblock %}

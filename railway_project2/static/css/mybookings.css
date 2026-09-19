@@ -1,0 +1,520 @@
+/* =========================================================
+   MY BOOKINGS PAGE
+   ========================================================= */
+
+.mybookings-body {
+    min-height: calc(100vh - 80px);
+    padding: 35px 0 40px 0;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url("/static/images/helps.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.bookings-title {
+    width: 60%;
+    max-width: 1000px;
+
+    margin: 0 auto 20px auto;
+
+    color: white;
+
+    font-size: 36px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BOOKING CARD
+   ========================================================= */
+
+.booking-card {
+    width: 60%;
+    max-width: 1000px;
+
+    margin: 18px auto;
+
+    /* Reduced padding */
+    padding: 18px 24px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 15px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+.booking-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   TRAIN TITLE
+   ========================================================= */
+
+.train-title {
+    color: #1d376f;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    /* Small bottom gap */
+    margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   HORIZONTAL LINE
+   ========================================================= */
+
+.booking-card hr {
+    border: none;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
+
+    /* Reduced spacing */
+    margin: 7px 0 9px 0;
+}
+
+
+/* =========================================================
+   ROUTE
+   ========================================================= */
+
+.route {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    /* Reduced spacing */
+    margin: 7px 0 9px 0;
+
+    color: #292929;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+.arrow {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   BOOKING DETAILS
+   ========================================================= */
+
+.booking-details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    /* Very small gaps */
+    column-gap: 30px;
+    row-gap: 0px;
+
+    margin-top: 0;
+}
+
+
+/* Individual details */
+
+.booking-details p {
+    margin: 3px 0;
+
+    color: #292929;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+}
+
+
+.booking-details strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Confirmed */
+
+.confirmed-status {
+    background-color: #198754;
+
+    color: white;
+}
+
+
+/* Pending */
+
+.pending-status {
+    background-color: #f0ad4e;
+
+    color: white;
+}
+
+
+/* Cancelled */
+
+.cancelled-status {
+    background-color: #dc3545;
+
+    color: white;
+}
+
+
+/* =========================================================
+   CANCELLED CARD
+   ========================================================= */
+
+.cancelled-card {
+    border: 2px solid #dc3545;
+
+    background: rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================================
+   BOOKING BUTTON
+   ========================================================= */
+
+.booking-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    /* Reduced gap above button */
+    margin-top: 7px;
+}
+
+
+.booking-buttons form {
+    margin: 0;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.cancel-btn {
+    border: none;
+
+    background-color: #dc3545;
+
+    color: white;
+
+    padding: 8px 17px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+
+.cancel-btn:hover {
+    background-color: #bb2d3b;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CANCELLED MESSAGE
+   ========================================================= */
+
+.cancelled-message {
+    margin-top: 7px;
+
+    padding-top: 7px;
+
+    border-top: 1px solid rgba(220, 53, 69, 0.3);
+
+    color: #dc3545;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NO BOOKINGS
+   ========================================================= */
+
+.no-bookings {
+    width: 60%;
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    padding: 35px 20px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+.no-bookings h4 {
+    margin: 0 0 8px 0;
+
+    color: #222;
+
+    font-size: 24px;
+}
+
+
+.no-bookings p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .bookings-title {
+        width: 75%;
+    }
+
+    .booking-card {
+        width: 75%;
+    }
+
+    .no-bookings {
+        width: 75%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .mybookings-body {
+        padding-top: 30px;
+    }
+
+
+    .bookings-title {
+        width: 90%;
+
+        font-size: 30px;
+    }
+
+
+    .booking-card {
+        width: 90%;
+
+        padding: 16px 18px;
+
+        margin: 15px auto;
+    }
+
+
+    .train-title {
+        font-size: 18px;
+    }
+
+
+    .route {
+        font-size: 16px;
+
+        gap: 10px;
+    }
+
+
+    .booking-details {
+        grid-template-columns: 1fr;
+
+        row-gap: 2px;
+    }
+
+
+    .booking-details p {
+        font-size: 14px;
+
+        margin: 3px 0;
+    }
+
+
+    .booking-buttons {
+        justify-content: flex-start;
+
+        margin-top: 9px;
+    }
+
+
+    .cancel-btn {
+        padding: 8px 15px;
+
+        font-size: 14px;
+    }
+
+
+    .no-bookings {
+        width: 90%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .bookings-title {
+        font-size: 27px;
+    }
+
+
+    .booking-card {
+        width: 94%;
+
+        padding: 15px;
+    }
+
+
+    .train-title {
+        font-size: 17px;
+    }
+
+
+    .route {
+        font-size: 15px;
+    }
+
+
+    .booking-details p {
+        font-size: 13px;
+    }
+
+
+    .no-bookings {
+        width: 94%;
+
+        padding: 30px 18px;
+    }
+}
+
+
+/* =========================================================
+   CONFIRMED STATUS
+   ========================================================= */
+
+.confirmed-status {
+    background-color: #198754;
+    color: white;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CANCELLED BOOKING CARD
+   ========================================================= */
+
+.cancelled-card {
+    border: 2px solid #dc3545;
+
+    background: rgba(255, 245, 245, 0.90);
+}
+
+
+/* =========================================================
+   CANCELLED STATUS
+   ========================================================= */
+
+.cancelled-status {
+    background-color: #dc3545;
+    color: white;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CANCELLED TICKET MESSAGE
+   ========================================================= */
+
+.cancelled-ticket {
+    margin-top: 10px;
+    padding-top: 9px;
+
+    border-top: 1px solid rgba(220, 53, 69, 0.35);
+
+    color: #dc3545;
+
+    text-align: right;
+
+    font-size: 14px;
+    font-weight: 700;
+}

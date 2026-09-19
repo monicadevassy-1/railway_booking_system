@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+{% block content %}
+<!-- email,country,gender,firstname,lastname -->
+
+    <div class="registerbody">
+        <div class="firstcard"></div>
+        <div class="maincard ">
+            <div class="register-card card">
+                <h1 class="profile-details fw-bold ">Profile Details</h1>
+                <form method="POST">
+                {% csrf_token %}
+                {{ form.errors }}
+                <div class="userpass">
+                    <div class="firstname">
+                        <label>First name</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="lastname">
+                        <label>Last name</label>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="gender">
+                        <label>Gender</label>
+                        {{ form.gender }}
+                    </div>
+                    <div class="email">
+                        <label>Email</label>
+                        {{ form.email }}
+                    </div>
+                    
+                    <div class="dob">
+                        <label for="dob">Date Of Birth</label>
+                        <input type="date" name="date_of_birth" class="form-control">
+                    </div>
+                    <div class="phone">
+                        <label>Phone Number</label>
+                        {{ form.phone }}
+                    </div>
+                    <div class="username">
+                        <label>Username</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="password">
+                        <label>Password</label>
+                        <input type="password" name="password">
+                    </div>
+                </div>
+                    <div class="registerbutton">
+                        <button class="btn btn-primary" type="submit">Register</button>
+                    </div>   
+                
+                </form>
+            </div>
+        </div>
+        <div class="thirdcard"></div>      
+        
+    </div>
+{% endblock %}

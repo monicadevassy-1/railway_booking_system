@@ -1,0 +1,468 @@
+/* =====================================================
+   CHAT WITH STAFF PAGE
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   MAIN CHAT CONTAINER / BACKGROUND
+===================================================== */
+
+.chat-container {
+
+    width: 100%;
+
+    min-height: calc(100vh - 70px);
+
+    background-image:
+        linear-gradient(
+            rgba(0, 20, 10, 0.40),
+            rgba(0, 20, 10, 0.40)
+        ),
+        url("../images/helps.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 35px 20px;
+}
+
+
+/* =====================================================
+   SAME WIDTH FOR CHAT SECTIONS
+===================================================== */
+
+.chat-header,
+.chat-body,
+.new-chat,
+.back-button {
+
+    width: 450px;
+
+    max-width: 92%;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.chat-header {
+
+    background: rgba(0, 70, 35, 0.85);
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 15px 15px 0 0;
+}
+
+
+.chat-header h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+.chat-header p {
+
+    margin: 6px 0 0;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   CHAT BODY
+===================================================== */
+
+.chat-body {
+
+    height: 390px;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    background: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =====================================================
+   PREVIOUS CONVERSATIONS HEADING
+===================================================== */
+
+.chat-body h3 {
+
+    color: white;
+
+    font-size: 18px;
+
+    margin: 20px 0;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   STAFF MESSAGE
+===================================================== */
+.ai-message {
+    max-width: 82%;
+
+    background: #087f4f;
+
+    padding: 13px 15px;
+
+    border-radius: 12px 12px 12px 3px;
+
+    margin-bottom: 15px;
+
+    color: white;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+.ai-message strong {
+    color: white;
+}
+.ai-message strong {
+    color: white !important;
+}
+
+.ai-message p {
+    color: white !important;
+}
+
+/* =====================================================
+   USER MESSAGE
+===================================================== */
+
+.user-message {
+
+    max-width: 82%;
+
+    margin-left: auto;
+
+    margin-bottom: 15px;
+
+    background:rgba(1, 89, 39, 0.7);
+
+    color: white;
+
+    padding: 12px 15px;
+
+    border-radius: 12px 12px 3px 12px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   WAITING FOR STAFF REPLY
+===================================================== */
+
+.waiting {
+
+    color:white;}
+
+
+/* =====================================================
+   START NEW CHAT
+===================================================== */
+
+.new-chat {
+
+    background: rgba(255, 255, 255, 0.75);
+
+    margin: 0;
+
+    padding: 12px 20px;
+}
+
+
+/* =====================================================
+   START NEW CHAT BUTTON
+===================================================== */
+
+.new-chat-button {
+
+    display: block;
+
+    background: #087f4f;
+
+    color: white;
+
+    padding: 12px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border-radius: 20px;
+
+    list-style: none;
+}
+
+
+/* Remove default triangle */
+
+.new-chat-button::-webkit-details-marker {
+
+    display: none;
+}
+
+
+.new-chat-button:hover {
+
+    background: #06482e;
+
+    color: white;
+}
+
+
+/* =====================================================
+   NEW CHAT FORM
+===================================================== */
+
+.new-chat-form {
+
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 20px;
+
+    margin-top: 12px;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   NEW CHAT HEADING
+===================================================== */
+
+.new-chat-form h3 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    color: #075c3a;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   LABELS
+===================================================== */
+
+.new-chat-form label {
+
+    display: block;
+
+    margin-top: 10px;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+
+/* =====================================================
+   TOPIC INPUT
+===================================================== */
+
+.new-chat-form input {
+
+    width: 100%;
+
+    height: 42px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    padding: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* =====================================================
+   MESSAGE TEXTAREA
+===================================================== */
+
+.new-chat-form textarea {
+
+    width: 100%;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    padding: 10px;
+
+    font-size: 14px;
+
+    resize: vertical;
+
+    outline: none;
+}
+
+
+/* =====================================================
+   INPUT FOCUS
+===================================================== */
+
+.new-chat-form input:focus,
+.new-chat-form textarea:focus {
+
+    border-color: #087f4f;
+}
+
+
+/* =====================================================
+   SEND MESSAGE BUTTON
+===================================================== */
+
+.new-chat-form button {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #075c3a;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.new-chat-form button:hover {
+
+    background: #06482e;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-button {
+
+    color: white;
+
+    background: rgba(1, 59, 34, 0.80);
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 12px;
+
+    border-radius: 0 0 15px 15px;
+}
+
+
+.back-button:hover {
+
+    background: #f1f5f3;
+
+    color: #06482e;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .chat-container {
+
+        min-height: calc(100vh - 60px);
+
+        padding: 20px 10px;
+    }
+
+
+    .chat-header,
+    .chat-body,
+    .new-chat,
+    .back-button {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .chat-body {
+
+        height: 380px;
+    }
+
+
+    .user-message,
+    .ai-message {
+
+        max-width: 90%;
+    }
+}

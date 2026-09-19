@@ -1,0 +1,611 @@
+/* ================================
+   HELP PAGE
+   ================================ */
+
+.helpsbody {
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-image:
+        linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)
+        ),
+        url("../images/helps.jpg");
+
+    background-size: cover;
+    background-position: top center;
+}
+
+
+/* ================================
+   TOP ROW
+   ================================ */
+
+.row1 {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6%;
+    padding: 5%;
+}
+
+
+/* ================================
+   HELP HEADING
+   ================================ */
+
+.card11 {
+    color: white;
+}
+
+
+/* ================================
+   FAQ + CONTACT CARDS
+   ================================ */
+
+.card12,
+.card13 {
+    width: 30%;
+
+    padding: 1.5%;
+
+    background-color: rgba(249, 243, 243, 0.75);
+}
+
+.card12 h5,
+.card13 h5,
+.card13 h6 {
+    font-weight: bold;
+}
+
+
+/* ================================
+   FAQ
+   ================================ */
+
+.card12 .list-group-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item {
+    border: none;
+
+    background-color: rgba(247, 247, 228, 0.4);
+}
+
+.faq-plus {
+    font-size: 20px;
+    font-weight: bold;
+
+    color: black;
+
+    text-decoration: none;
+}
+
+
+/* ================================
+   CONTACT
+   ================================ */
+
+.card13 p {
+    text-align: start;
+
+    padding-left: 8%;
+
+    color: gray;
+}
+
+
+/* ================================
+   STILL NEED HELP
+   ================================ */
+
+.row2 {
+    width: 100%;
+}
+
+.card21 {
+    width: 95%;
+
+    display: flex;
+    align-items: center;
+
+    margin: 1% auto;
+    padding: 20px;
+
+    border-radius: 15px;
+    border: none;
+
+    color: white;
+
+    background-color: rgba(2, 2, 72, 0.5);
+}
+
+
+/* LEFT SIDE */
+
+.writing {
+    padding: 1%;
+}
+
+
+/* RIGHT SIDE */
+
+.live {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-left: auto;
+}
+
+
+/* ================================
+   CHAT WITH STAFF BUTTON
+   ================================ */
+
+.staff-chat {
+    position: relative;
+}
+
+.chat-staff-btn {
+    display: block;
+
+    padding: 13px 24px;
+
+    background-color: #075c3a;
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.chat-staff-btn:hover {
+    background-color: #06482e;
+}
+
+
+/* Remove default triangle */
+
+.chat-staff-btn::-webkit-details-marker {
+    display: none;
+}
+
+
+/* ================================
+   STAFF POPUP
+   ================================ */
+
+.staff-popup {
+    display: none;
+
+    position: fixed;
+
+    right: 5%;
+    bottom: 90px;
+
+    width: 560px;
+    max-width: 90%;
+
+    max-height: 75vh;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
+
+    z-index: 1000;
+}
+
+
+/* Show popup when Chat with Staff is opened */
+
+.staff-chat[open] .staff-popup {
+    display: block;
+}
+
+
+/* ================================
+   POPUP HEADING
+   ================================ */
+
+.staff-popup h2 {
+    margin: 0 0 10px 0;
+
+    color: #24447c;
+
+    font-size: 28px;
+}
+
+
+/* ================================
+   CONVERSATIONS
+   ================================ */
+
+.staff-popup h3 {
+    margin: 10px 0 12px 0;
+
+    font-size: 18px;
+
+    color: #333;
+}
+
+.conversation-card {
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 9px;
+
+    background-color: #f8fafc;
+}
+
+.conversation-card h4 {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+
+    color: #075c3a;
+}
+
+.conversation-card p {
+    margin: 7px 0;
+
+    color: #444;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   NEW CHAT
+   ================================ */
+
+.new-chat {
+    margin-top: 10px;
+}
+
+
+/* New Chat button */
+
+.new-chat-btn {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    background-color: #087f4f;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.new-chat-btn:hover {
+    background-color: #075c3a;
+}
+
+
+/* Remove default triangle */
+
+.new-chat-btn::-webkit-details-marker {
+    display: none;
+}
+
+
+/* ================================
+   NEW CHAT FORM
+   ================================ */
+
+.new-chat-section {
+    padding-top: 10px;
+}
+
+.new-chat-section label {
+    display: block;
+
+    margin-top: 12px;
+
+    margin-bottom: 6px;
+
+    color: #444;
+
+    font-weight: 600;
+}
+
+.new-chat-section input,
+.new-chat-section textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.new-chat-section input:focus,
+.new-chat-section textarea:focus {
+    outline: none;
+
+    border-color: #075c3a;
+}
+
+.new-chat-section textarea {
+    resize: vertical;
+}
+
+
+/* ================================
+   SEND MESSAGE BUTTON
+   ================================ */
+
+.send-message-btn {
+    margin-top: 12px;
+
+    border: none;
+
+    padding: 11px 22px;
+
+    background-color: #087f4f;
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.send-message-btn:hover {
+    background-color: #075c3a;
+}
+
+
+/* ================================
+   LIVE CHAT BUTTON
+   ================================ */
+
+.live-chat-btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    background-color: #087f4f;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.live-chat-btn:hover {
+    background-color: #075c3a;
+}
+
+
+/* ================================
+   TABLET
+   ================================ */
+
+@media (max-width: 992px) {
+
+    .row1 {
+        flex-wrap: wrap;
+
+        gap: 25px;
+    }
+
+    .card11 {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .card12,
+    .card13 {
+        width: 45%;
+    }
+
+    .staff-popup {
+        right: 5%;
+
+        width: 90%;
+    }
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 600px) {
+
+    .helpsbody {
+        min-height: auto;
+
+        padding-bottom: 20px;
+    }
+
+
+    /* Top row */
+
+    .row1 {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 25px 5%;
+    }
+
+    .card11 {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .helphead {
+        font-size: 28px;
+    }
+
+
+    /* FAQ + Contact */
+
+    .card12,
+    .card13 {
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .card12 h5,
+    .card13 h5 {
+        font-size: 20px;
+    }
+
+    .card13 p {
+        padding-left: 0;
+    }
+
+
+    /* Still need help */
+
+    .card21 {
+        flex-direction: column;
+
+        gap: 15px;
+
+        width: 90%;
+
+        margin: auto;
+
+        padding: 20px;
+
+        text-align: center;
+    }
+
+    .writing {
+        width: 100%;
+    }
+
+    .live {
+        margin-left: 0;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* Staff popup */
+
+    .staff-popup {
+        right: 5%;
+
+        bottom: 80px;
+
+        width: 90%;
+
+        max-height: 75vh;
+
+        padding: 20px;
+    }
+
+    .staff-popup h2 {
+        font-size: 24px;
+
+        margin-bottom: 8px;
+    }
+
+
+    /* Buttons */
+
+    .chat-staff-btn,
+    .live-chat-btn {
+        width: auto;
+    }
+
+    .new-chat-btn {
+        width: 100%;
+    }
+}
+
+
+/* ================================
+   SMALL MOBILE
+   ================================ */
+
+@media (max-width: 400px) {
+
+    .helphead {
+        font-size: 24px;
+    }
+
+    .card12,
+    .card13 {
+        padding: 15px;
+    }
+
+    .card21 {
+        width: 92%;
+    }
+
+    .live {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .chat-staff-btn,
+    .live-chat-btn {
+        width: 100%;
+
+        text-align: center;
+    }
+}

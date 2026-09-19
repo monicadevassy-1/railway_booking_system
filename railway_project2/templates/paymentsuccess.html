@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="paymentbody">
+
+    <div class="journey-container">
+
+        <div class="journey-card">
+
+            <h2 style="text-align:center;">
+                <strong>Payment Successful</strong>
+            </h2>
+
+            <hr>
+
+            <h4 class="train-name">
+                <strong>
+                    {{ booking.train.train_number }} -
+                    {{ booking.train.train_name }}
+                </strong>
+            </h4>
+
+            <div class="route-section">
+
+                <div>
+                    <strong>{{ booking.starting_station.station_name }}</strong>
+                </div>
+
+                <div>
+                    →
+                </div>
+
+                <div>
+                    <strong>{{ booking.destination_station.station_name }}</strong>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="details-section">
+
+                <div class="left-details">
+
+                    <p>
+                        <strong>PNR Number:</strong>
+                        {{ booking.pnr }}
+                    </p>
+
+                    <p>
+                        <strong>Journey Date:</strong>
+                        {{ booking.journey_date }}
+                    </p>
+
+                    <p>
+                        <strong>Class:</strong>
+                        {{ booking.train_class.class_type.class_name }}
+                    </p>
+
+                    <p>
+                        <strong>Passengers:</strong>
+                        {{ booking.passengers }}
+                    </p>
+
+                    <p>
+                        <strong>Booking Status:</strong>
+                        Confirmed
+                    </p>
+
+                </div>
+
+                <div class="right-details">
+
+                    <p>
+                        <strong>Payment ID:</strong>
+                        {{ payment_id }}
+                    </p>
+
+                    <h4 class="total">
+                        Total Amount:
+                        <strong>₹{{ booking.total_amount }}</strong>
+                    </h4>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div style="text-align:center;">
+
+                <h3>✓ Payment Successful</h3>
+
+                <p>
+                    Your railway booking has been confirmed.
+                </p>
+
+                <a href="{% url 'home' %}" class="confirm-btn">
+                    Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

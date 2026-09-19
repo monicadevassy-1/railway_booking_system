@@ -1,0 +1,219 @@
+.adminall{width: 100%;
+    height:100%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;}
+*{margin: 0;}
+
+
+
+.bottombar{
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;}
+.bottomleft {
+    width: 20%;height: 100%;
+    background-color: rgb(7, 1, 104);
+    padding: 2%;
+    font-weight: 500;
+    color: rgb(186, 218, 244);
+    font-size: large;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;}
+.railway-brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;}
+.nav-item{
+    /* background-color: yellow; */
+    padding-bottom: 5px;
+    display: flex;flex-direction: row;}
+.sideup {
+    display: flex;
+    flex-direction: column;
+    height: 100%;}
+.sideup .nav-link {
+    text-decoration: none;
+    color:rgb(221, 221, 247)}
+.sideup .nav-link.active {
+    color:white;
+    font-weight: bold;
+    font-size: larger;}
+.sideup .nav-link:hover {
+    color: white;
+    font-weight: bold;font-size: larger;}
+.sideup li {
+    list-style: none !important;}
+.admin-profile {
+    margin-top: auto; 
+    padding-bottom: 10px;}
+
+
+
+
+.breadcrumb {
+    display: flex;
+    list-style: none !important;
+    margin: 0;
+    padding: 0;}
+.breadcrumb-item {
+    color: white !important;
+    font-weight: bold;}
+.breadcrumb-item a {
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none;}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    color: white !important;
+    font-weight: bold;
+    padding: 0 8px;}
+
+
+
+
+.card{
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);}
+.card-link{
+    padding-top: 8%;
+    padding-bottom: 8%;
+    text-decoration: none;
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;}
+
+
+
+
+.bottomright{
+    /* background-color: rgb(241, 181, 241); */
+    width: 90%;
+    height: 100%;
+    margin-left: 1%;}
+.part1{
+    color: rgb(43, 3, 98);
+    border-radius: 15px;
+    background-image: url("../images/adminpage.png");
+    background-size:cover ;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/adminpage.png");
+    height: auto;
+    /* background-color:palevioletred; */
+    width: 92%;
+    margin: 1%;
+    padding: 1%;}
+
+.part3{
+    display:flex ;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1%;
+    margin: 1%;
+    width: 98%;
+    height:auto;}
+    /* background-color: red;} */
+
+
+
+
+/* ............................................................................................... */
+
+
+
+.p1{
+    /* background-color: yellow; */
+    width: 100%;
+    height: auto}
+.p1top{
+    /* background-color: orange; */
+    width: 100%;
+    height: 10%; 
+    display: flex;
+    gap:50%;
+    margin-bottom: 10px;}
+.p1top h3{
+    font-weight: bold;}
+.p1bottom{
+    /* background-color: orchid; */
+    width: 100%;
+    height:50%;
+    display: flex;
+    gap: 20px;}
+
+.p1bleft{
+    /* background-color: green; */
+    width: 50%;
+    height: auto;
+    display: flex;
+    padding-top: 2%;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: end;
+    padding-right: 15%;
+    padding-bottom: 2%;}
+
+.p1bleft label {
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;}
+.p1bright{
+    /* background-color: hotpink; */
+    width: 50%;
+    height: auto;
+    display: flex;
+    padding-top: 2%;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: end;
+    padding-right: 15%;
+    padding-bottom: 2%;}
+.p1bright label {
+    width: 180px;
+    text-align: right;
+    margin-right: 10px;}
+.p1bleft input {
+    width: 200px;}
+.p1bright input,.p1bright select {
+    width: 200px;}
+
+
+
+
+.p2{
+    /* padding-left: 10%; */
+    background-color: rgb(195, 193, 243);
+    width: 100%;
+    height: 80%;
+    padding:3%;
+    border-radius: 15px;}
+.p2top{
+    /* background-color: orange; */
+    width: 100%;
+    height: 30%;}
+.p2bottom{
+    /* background-color: rgb(195, 193, 243); */
+    width: 100%;
+    height: 70%;}
+.p2bottom form {
+    padding: 20px;}
+.p2bottom form div {
+    margin-bottom: 15px;}
+.p2bottom label {
+    display: inline-block;
+    width: 160px;}
+.p2bottom input {
+    width: 250px;}
+.p2bottomleft{
+    display: flex;
+     gap :20%}
+
+

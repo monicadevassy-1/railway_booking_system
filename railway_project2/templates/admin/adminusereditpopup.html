@@ -1,0 +1,49 @@
+<div class="modal fade" id="editUser{{ user.id }}" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit User</h5>
+                <button type="button" class="btn-close"data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden"name="action"value="edit">
+                    <input type="hidden" name="user_id"value="{{ user.id }}">
+                    <label>First Name</label>
+                    <input type="text" name="first_name"value="{{ user.first_name }}" class="form-control">
+                    <label>Last Name</label>
+                    <input type="text"  name="last_name"value="{{ user.last_name }}"class="form-control">
+
+                    <label>Email</label>
+                    <input type="email"  name="email" value="{{ user.email }}"class="form-control">
+
+                    <label>Phone</label>
+                    <input type="text"  name="phone"value="{{ user.phone }}"class="form-control">
+
+                    <label>Username</label>
+                    <input type="text" name="username"value="{{ user.username }}"class="form-control">
+
+                    <label>Admin/User</label>
+                    <div class="mb-3">
+                        <label>Admin/User</label>
+                        {% if user.is_admin %}
+                            <select name="is_admin" class="form-control">
+                                <option value="False">User</option>
+                                <option value="True" selected>Admin</option>
+                            </select>
+                        {% else %}
+                            <select name="is_admin" class="form-control">
+                                <option value="False" selected>User</option>
+                                <option value="True">Admin</option>
+                            </select>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <button type="submit"  class="btn btn-primary">Update User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

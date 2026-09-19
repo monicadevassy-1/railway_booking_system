@@ -1,0 +1,292 @@
+.trainsbody {
+    display: flex;
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    background-image: linear-gradient(
+        rgba(152, 199, 246, 0.275),
+        rgba(0, 45, 90, 0.312)
+    ), url("../images/trains.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ================= LEFT SECTION ================= */
+
+.col1 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 5%;
+}
+
+.row11 h2 {
+    font-weight: bold;
+    color: white;
+}
+
+.row11 p {
+    color: white;
+}
+
+.row12 {
+    width: 70%;
+    padding-left: 8%;
+    padding-top: 3%;
+}
+
+.row12card {
+    background-color: transparent;
+    border: none;
+}
+
+
+/* ================= RIGHT SECTION ================= */
+
+.col2 {
+    width: 60%;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 5%;
+}
+
+.card21 {
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.card21 h4,
+.card21 h5,
+.card21 label,
+.list-group-item {
+    font-weight: bold;
+}
+
+.card21 h4,
+.card21 h5 {
+    color: #290575;
+}
+
+
+/* ================= FROM / TO ================= */
+
+.tofrom {
+    padding-top: 5%;
+    display: flex;
+    gap: 10%;
+}
+
+.to,
+.from {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.to select,
+.from select {
+    width: 100%;
+}
+
+
+/* ================= DATE / CLASS ================= */
+
+.jdateclass {
+    display: flex;
+    gap: 10%;
+}
+
+.class,
+.jdate {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.jdate input {
+    color: gray;
+    padding-left: 10%;
+    width: 100%;
+    height: 38px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #dad8d8;
+}
+
+
+/* ================= BUTTON ================= */
+
+.searchbtn {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.searchbtn button {
+    width: 100%;
+}
+
+
+/* ================= POPULAR SEARCH ================= */
+
+.popbtn {
+    display: flex;
+    flex-direction: column;
+}
+
+.popbtn1,
+.popbtn2 {
+    display: flex;
+    gap: 10%;
+}
+
+.popbtn button {
+    width: 100%;
+}
+
+
+/* ================================================= */
+/* ================= TABLET ======================== */
+/* ================================================= */
+
+@media (max-width: 992px) {
+
+    .trainsbody {
+        flex-direction: column;
+        min-height: 700px;
+    }
+
+    .col1 {
+        width: 100%;
+        padding: 5% 8% 2%;
+        box-sizing: border-box;
+    }
+
+    .row12 {
+        width: 50%;
+        padding-left: 0;
+    }
+
+    .col2 {
+        width: 100%;
+        padding: 2% 8% 5%;
+        box-sizing: border-box;
+    }
+
+    .card21 {
+        width: 100%;
+    }
+}
+
+
+/* ================================================= */
+/* ================= MOBILE ======================== */
+/* ================================================= */
+
+@media (max-width: 576px) {
+
+    .trainsbody {
+        flex-direction: column;
+        min-height: 100vh;
+        background-size: cover;
+    }
+
+    /* LEFT SECTION */
+
+    .col1 {
+        width: 100%;
+        padding: 30px 20px 10px;
+        box-sizing: border-box;
+    }
+
+    .row11 h2 {
+        font-size: 28px;
+    }
+
+    .row11 p {
+        font-size: 14px;
+    }
+
+    .row12 {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .row12card {
+        width: 100%;
+    }
+
+    .row12card a {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+
+    /* RIGHT SECTION */
+
+    .col2 {
+        width: 100%;
+        padding: 10px 20px 30px;
+        box-sizing: border-box;
+    }
+
+    .card21 {
+        width: 100%;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+
+
+    /* FROM / TO */
+
+    .tofrom {
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 20px;
+    }
+
+    .to,
+    .from {
+        width: 100%;
+    }
+
+
+    /* DATE / CLASS */
+
+    .jdateclass {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .class,
+    .jdate {
+        width: 100%;
+    }
+
+    .jdate input {
+        width: 100%;
+        height: 38px;
+        padding-left: 10px;
+    }
+
+
+    /* SEARCH BUTTON */
+
+    .searchbtn button {
+        width: 100%;
+    }
+
+
+    /* POPULAR SEARCH */
+
+    .popbtn1,
+    .popbtn2 {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .popbtn button {
+        width: 100%;
+    }
+}

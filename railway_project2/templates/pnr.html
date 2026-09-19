@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/pnr.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="pnrbody">
+        <div class="col1">
+            <div class="row11">
+                <h2>PNR Status</h2>
+                <p>Check your PNR status and view your journey details.</p>
+            </div>
+            <div class="row12">
+                <div class="card row12card">
+                    <!-- from bootstrap -->
+                        <a href="{% url 'trains' %}" class="btn btn-outline-light mb-2">🔍 Search Trains</a>
+
+                        <a href="{% url 'pnr' %}" class="btn btn-outline-light active mb-2">🪪 PNR Status</a>
+<!-- 
+                        <a href="{% url 'reserv' %}" class="btn btn-outline-light mb-2 ">📃 Reservation Chart </a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col2">
+            <div class="card21 card">
+                <div class="cardhead">
+                    <h4>PNR Status</h4>
+                </div>
+                <form method="GET">
+                    <div class="pnrnumb">
+                        <label class="pnrnum">Enter the PNR number</label>
+                        <input
+                            class="form-control"
+                            name="pnr"
+                            value="{{ pnr_number|default:'' }}"
+                            placeholder="10 digit PNR number"
+                            maxlength="10"
+                            required>
+                    </div>
+                    <br>
+                    <div class="pnrbtn">
+                        <button class="btn btn-primary" type="submit">
+                            Check PNR Status
+                        </button>
+                    </div>
+                </form>
+                <br>
+                <div class="pnrinfo">
+                    <h5>PNR Information</h5>
+                    <div class="pnrdetail card">
+                        <h6>Enter your 10-digit PNR number to check : </h6>
+                        <ul class="text-pnr">
+                            <li>Train Details</li>
+                            <li>Journey Date</li>
+                            <li>Passenger Details</li>
+                            <li>Seat / Berth Status</li>
+                            <li>Booking Status</li>
+                        </ul>
+                    </div>
+                    {% if pnr_number %}
+
+                        {% if booking %}
+
+                            <div class="pnrdetail card mt-3">
+
+                                <h5>PNR Details</h5>
+
+                                <p>
+                                    <strong>PNR Number:</strong>
+                                    {{ booking.pnr }}
+                                </p>
+
+                                <p>
+                                    <strong>Train:</strong>
+                                    {{ booking.train.train_number }} -
+                                    {{ booking.train.train_name }}
+                                </p>
+
+                                <p>
+                                    <strong>From:</strong>
+                                    {{ booking.starting_station.station_name }}
+                                </p>
+
+                                <p>
+                                    <strong>To:</strong>
+                                    {{ booking.destination_station.station_name }}
+                                </p>
+
+                                <p>
+                                    <strong>Journey Date:</strong>
+                                    {{ booking.journey_date }}
+                                </p>
+
+                                <p>
+                                    <strong>Class:</strong>
+                                    {{ booking.train_class.class_type.class_name }}
+                                </p>
+
+                                <p>
+                                    <strong>Passengers:</strong>
+                                    {{ booking.passengers }}
+                                </p>
+
+                                <p>
+                                    <strong>Total Amount:</strong>
+                                    ₹{{ booking.total_amount }}
+                                </p>
+
+                                <p>
+                                    <strong>Booking Status:</strong>
+                                    {{ booking.booking_status }}
+                                </p>
+
+                            </div>
+
+                        {% else %}
+
+                            <div class="pnrdetail card mt-3">
+                                <h5>PNR Not Found</h5>
+                                <p>No booking was found for PNR {{ pnr_number }}.</p>
+                            </div>
+
+                        {% endif %}
+
+                    {% endif %}
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{%endblock%}

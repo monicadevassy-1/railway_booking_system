@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/chatai.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="chat-container">
+
+
+    <!-- HEADER -->
+
+    <div class="chat-header">
+
+        <h2>
+            Railway - AI Assistant
+        </h2>
+
+        <p>
+            Ask me anything about your railway booking.
+        </p>
+
+    </div>
+
+
+    <!-- CHAT BODY -->
+
+    <div class="chat-body">
+
+
+        <!-- WELCOME MESSAGE -->
+
+        <div class="ai-message">
+
+            <strong>
+                Railway AI Assistant
+            </strong>
+
+            <br><br>
+
+            Hello! 👋
+
+            <br><br>
+
+            How can I help you today?
+
+        </div>
+
+
+        <!-- USER QUESTION + AI ANSWER -->
+
+        {% if result %}
+
+            <div class="user-message">
+
+                {{ request.POST.prompt }}
+
+            </div>
+
+
+            <div class="ai-message">
+
+                <strong>
+                    Railway AI Assistant
+                </strong>
+
+                <br><br>
+
+                {{ result }}
+
+            </div>
+
+        {% endif %}
+
+
+    </div>
+
+
+    <!-- QUESTION FORM -->
+
+    <form method="POST"
+          class="chat-form">
+
+        {% csrf_token %}
+
+
+        <input type="text"
+               name="prompt"
+               placeholder="Type your question..."
+               required
+               autocomplete="off">
+
+
+        <button type="submit">
+
+            ➤
+
+        </button>
+
+
+    </form>
+
+
+    <!-- BACK -->
+
+    <a href="{% url 'helps' %}"
+       class="back-button">
+
+        ← Back to Help & Support
+
+    </a>
+
+
+</div>
+
+{% endblock %}

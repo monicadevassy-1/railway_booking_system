@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="paymentbody">
+
+    <!-- ==============================
+         PROGRESS BAR
+    =============================== -->
+
+    <div class="progress-container">
+
+        <!-- BOOKING COMPLETED -->
+        <div class="progress-step completed">
+            <div class="progress-dot">
+                ✓
+            </div>
+            <h5>Booking</h5>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <!-- PAYMENT ACTIVE -->
+        <div class="progress-step active">
+            <div class="progress-dot"></div>
+            <h5>Payment</h5>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <!-- TICKET -->
+        <div class="progress-step">
+            <div class="progress-dot"></div>
+            <h5>Ticket</h5>
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         PAYMENT DETAILS
+    =============================== -->
+
+    <div class="journey-container">
+
+        <h2>
+            <strong>Payment</strong>
+        </h2>
+
+
+        <div class="journey-card">
+
+            <!-- TRAIN NAME -->
+            <h4 class="train-name">
+                <strong>
+                    {{ booking.train.train_number }} -
+                    {{ booking.train.train_name }}
+                </strong>
+            </h4>
+
+
+            <!-- ROUTE -->
+            <div class="route-section">
+
+                <!-- SOURCE -->
+                <div class="station source-station">
+
+                    <h3>
+                        <strong>
+                            {{ booking.starting_station.station_code }}
+                        </strong>
+                    </h3>
+
+                    <p>
+                        {{ booking.starting_station.station_name }}
+                    </p>
+
+                </div>
+
+
+                <!-- LINE -->
+                <div class="route-line">
+
+                    <div class="route-dot"></div>
+
+                    <div class="route-dotted-line"></div>
+
+                    <div class="route-dot"></div>
+
+                </div>
+
+
+                <!-- DESTINATION -->
+                <div class="station destination-station">
+
+                    <h3>
+                        <strong>
+                            {{ booking.destination_station.station_code }}
+                        </strong>
+                    </h3>
+
+                    <p>
+                        {{ booking.destination_station.station_name }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- ==============================
+                 BOOKING INFORMATION
+            =============================== -->
+
+            <div class="details-section">
+
+                <div class="left-details">
+
+                    <p>
+                        <strong>PNR Number:</strong>
+                        <strong>
+                            {{ booking.pnr }}
+                        </strong>
+                    </p>
+
+                    <p>
+                        <strong>Journey Date:</strong>
+                        {{ booking.journey_date }}
+                    </p>
+                    <p><strong>Class:</strong>{{ booking.train_class.class_type.class_name }}</p>
+                    <p><strong>Passengers:</strong>{{ booking.passengers }}</p>
+
+                </div>
+
+
+                <div class="right-details">
+                    <p><strong>Fare per passenger:</strong> ₹{{ booking.train_class.fare }}</p>
+                    <h4 class="total">Total Amount:<strong> ₹{{ booking.total_amount }}</strong></h4>
+                </div>
+            </div>
+            <hr>
+            <!-- PAY NOW BUTTON -->
+            <button type="button" class="confirm-btn" id="pay-btn">  Pay Now</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+    var options = {
+        key: "{{ razorpay_merchant_key }}",
+        amount: "{{ razorpay_amount }}",
+        currency: "{{ currency }}",
+
+        name: "Indian Railways",
+
+        order_id: "{{ razorpay_order_id }}",
+
+        callback_url: "{{ callback_url }}"
+    };
+
+    var rzp1 = new Razorpay(options);
+
+    document.getElementById("pay-btn").onclick = function(e) {
+        rzp1.open();
+        e.preventDefault();
+    };
+</script>
+{% endblock %}

@@ -1,0 +1,536 @@
+* {margin: 0;}
+.title1{padding-top: 2%;}
+
+.breadcrumb-item,
+.breadcrumb-item.active {
+    color: white !important;}
+.breadcrumb-item a {
+    color: white !important;
+    text-decoration: none;}
+.breadcrumb-item + .breadcrumb-item::before {
+    color: white !important;}
+
+.ssbody{
+    /* background-color:blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;}
+.sstop{
+    color: white;
+    padding-top: 2%;
+    padding-left: 5%;
+    width: 100%;
+    height: 20%;
+    /* background-color: green; */
+    background-image: url("../images/vande-bharat.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/login.jpeg");}
+.sstop h2{
+    font-weight: bold;}
+
+.ssbottom{
+    margin-top:2% ;
+    margin-bottom:2% ;
+    width: 94%;
+    height:80%;
+    /* background-color: orange; */
+    margin-left: 3%;
+    margin-right:3% ;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 10px;}
+
+.searchbar{
+    /* background-color: green; */
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;}
+.part1,.part2,.part3{
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;}
+.part1 input{
+    width: 100%;}
+.part2 button,.part3 button{
+    width: 100%;}
+.sbar{
+    /* background-color: aqua; */
+    display: flex;}
+.part1{
+    /* background-color: red; */
+    width: 40%;}
+.part2{
+    /* background-color: rgb(12, 187, 108); */
+    width:20%;}
+.part3{
+    /* background-color: blue; */
+    width:20%;}
+.part4{
+    /* background-color: yellow; */
+    width:20%;}
+.part4{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    justify-content: center;
+    align-items: center;}
+.part4 button{
+    width: 70%;}
+.btn-outline-secondary{
+    border-color: black;
+    color: black;}
+.notebar{
+    height: 5%;}
+.notebar .alert svg{
+    height: 2%;
+    width: 2%;}
+.sbar label{
+    font-weight: bold;}
+
+.popbar{
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;}
+.popbar h3,.popbar p{
+    color: rgb(1, 1, 53);
+    font-weight: bold;}
+.card h3,
+.card h5,
+.card p {
+    display: table;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: #00144d;
+    font-weight: bold;
+}
+.line1{
+    /* background-color: orange; */
+    height: auto;
+    margin: 1%;
+    display: flex;
+    gap:15px}
+.card{width:25%;
+    height:auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;align-items: center;
+    gap: 30px;
+    padding: 1%;}
+
+.part12{
+    display: flex;flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: auto;
+    /* background-color: blue; */
+    height: 100%;}
+.line2{
+    /* background-color: yellow; */
+    height: auto;
+    margin: 1%;
+    display: flex;
+    gap:15px}
+
+.card1{ background-image: url("../images/delhi_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/delhi_logo.jpg");}
+.card2{ background-image: url("../images/mumbai_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/mumbai_logo.jpg");}
+.card4{ background-image: url("../images/bengaluru_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/bengaluru_logo.jpg");}
+.card3{ background-image: url("../images/chennai_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/chennai_logo.jpg");}
+
+
+
+.card5{ background-image: url("../images/kolkata_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/kolkata_logo.jpg");}
+
+.card6{ background-image: url("../images/pune_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/pune_logo.jpg");}
+
+.card7{ background-image: url("../images/jaipur_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/jaipur_logo.jpg");}
+
+.card8{ background-image: url("../images/ahemedabad_logo.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/ahemedabad_logo.jpg");}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /* =========================================
+   RESPONSIVE SEARCH STATION PAGE
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 768px) {
+
+    .sstop {
+        width: 100%;
+        padding: 20px 5%;
+        min-height: 100px;
+        background-size: cover;
+    }
+
+    .sstop h2 {
+        font-size: 24px;
+    }
+
+    .ssbottom {
+        width: 94%;
+        margin: 20px 3%;
+    }
+
+
+    /* Search section */
+
+    .sbar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .part1 {
+        width: 50%;
+    }
+
+    .part2,
+    .part3 {
+        width: 25%;
+    }
+
+    .part4 {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .part4 button {
+        width: 50%;
+    }
+
+
+    /* Note */
+
+    .notebar {
+        height: auto;
+    }
+
+    .notebar .alert {
+        font-size: 13px;
+    }
+
+
+    /* Popular stations */
+
+    .line1,
+    .line2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 10px 0;
+    }
+
+    .card {
+        width: 100%;
+        min-height: 150px;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .part12 {
+        width: 100%;
+    }
+
+    .card h3 {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .card p {
+        font-size: 12px;
+        text-align: center;
+        padding: 3px 5px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .ssbody {
+        width: 100%;
+    }
+
+
+    /* Top banner */
+
+    .sstop {
+        width: 100%;
+        min-height: 90px;
+        padding: 15px 5%;
+        background-size: cover;
+    }
+
+    .sstop h2 {
+        font-size: 20px;
+    }
+
+    .breadcrumb {
+        font-size: 11px;
+    }
+
+
+    /* Main content */
+
+    .ssbottom {
+        width: 94%;
+        margin: 15px 3%;
+        gap: 10px;
+    }
+
+
+    /* Search fields */
+
+    .sbar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .part1,
+    .part2,
+    .part3,
+    .part4 {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .part1 label,
+    .part2 label,
+    .part3 label {
+        font-size: 12px;
+    }
+
+    .part1 input {
+        width: 100%;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .part2 button,
+    .part3 button {
+        width: 100%;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .part4 {
+        padding-top: 10px;
+    }
+
+    .part4 button {
+        width: 100%;
+        height: 35px;
+        font-size: 13px;
+    }
+
+
+    /* Information bar */
+
+    .notebar {
+        width: 100%;
+    }
+
+    .notebar .alert {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+
+    /* Popular stations */
+
+    .popbar {
+        width: 100%;
+    }
+
+    .popbar h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+
+    /* Two cards per row */
+
+    .line1,
+    .line2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin: 5px 0;
+    }
+
+    .card {
+        width: 100%;
+        min-height: 135px;
+        height: 135px;
+        padding: 5px;
+        border-radius: 8px;
+        gap: 3px;
+        overflow: hidden;
+    }
+
+    .cardtext {
+        width: 100%;
+    }
+
+    .card h3 {
+        font-size: 13px;
+        padding: 3px 4px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .card p {
+        font-size: 9px;
+        padding: 2px 3px;
+        text-align: center;
+        margin-bottom: 2px;
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .sstop {
+        padding: 12px 4%;
+    }
+
+    .sstop h2 {
+        font-size: 18px;
+    }
+
+    .ssbottom {
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .line1,
+    .line2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .card {
+        min-height: 125px;
+        height: 125px;
+    }
+
+    .card h3 {
+        font-size: 11px;
+    }
+
+    .card p {
+        font-size: 8px;
+    }
+
+    .notebar .alert {
+        font-size: 9px;
+    }
+
+}

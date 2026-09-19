@@ -1,0 +1,50 @@
+.row1 {
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding:5%;
+    gap: 6%;
+    justify-content: center;
+    align-items: baseline}
+.card11{
+    color:white;}
+
+.card12 .list-group-item {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+.faq-plus {
+    font-size: 20px;
+    font-weight: bold;}
+/* .row2 {
+    height: auto} */
+.helpsbody {
+    background-color: purple;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/helps.jpg");
+    background-size: 100% auto;
+    background-position: top center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/helps.jpg");}
+.card12{
+    padding: 1.5%;
+    width:100%;
+    background-color:rgb(249, 243, 243,.75)}
+.card12 h5{
+    font-weight: bold;}
+.que,.ans{
+    padding: 20px;
+    display: flex;flex-direction: column;
+    border: none;
+    background-color: rgb(247, 247, 228,.4);}
+
+
+.part1{display: flex;gap: 15px}
+.que{width:100%;}
+

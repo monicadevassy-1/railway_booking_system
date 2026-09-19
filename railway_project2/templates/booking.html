@@ -1,0 +1,450 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/booking.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="helpsbody">
+    <!-- PAGE HEADING -->
+    <div class="row1">
+        <h1 class="fw-bold">Booking Your Journey </h1>
+        <p>Safe. Comfortable. Always with you.</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="row2">
+        <!-- FILTER CARD -->
+        <div class="card21 card">
+            <h5>Filters</h5>
+            <form method="GET" action="{% url 'booking' %}">
+
+                <!-- CLASS -->
+                <details class="filter-section">
+                    <summary class="filter-heading">Class</summary>
+                    <div class="class-options">
+                        <!-- CC -->
+                        <label class="filter-option">
+                            {% if selected_class_name == "CC" %}
+                                <input type="radio" name="classes"value="CC"checked>
+                            {% else %}
+                                <input type="radio" name="classes"value="CC">
+                            {% endif %}
+                            <span> AC Chair Car (CC)</span>
+                        </label>
+
+                        <!-- EC -->
+                        <label class="filter-option">
+                            {% if selected_class_name == "EC" %}
+                                <input type="radio"name="classes"value="EC" checked>
+                            {% else %}
+                                <input type="radio" name="classes"value="EC">
+                            {% endif %}
+                            <span>Executive AC Chair Car (EC)</span>
+                        </label>
+
+                        <!-- 1A -->
+                        <label class="filter-option">
+                            {% if selected_class_name == "1A" %}
+                                <input type="radio"name="classes" value="1A"checked>
+                            {% else %}
+                                <input type="radio" name="classes"value="1A">
+                            {% endif %}
+                            <span> First AC (1A)</span>
+                        </label>
+
+                        <!-- 2A -->
+                        <label class="filter-option">
+                            {% if selected_class_name == "2A" %}
+                                <input type="radio" name="classes" value="2A"checked>
+                            {% else %}
+                                <input type="radio" name="classes"value="2A">
+                            {% endif %}
+                            <span>AC 2 Tier (2A)</span>
+                        </label>
+
+
+                        <!-- 3A -->
+                        <label class="filter-option">
+                            {% if selected_class_name == "3A" %}
+                                <input type="radio" name="classes"value="3A"  checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="classes"
+                                       value="3A">
+
+                            {% endif %}
+
+                            <span>
+                                AC 3 Tier (3A)
+                            </span>
+
+                        </label>
+
+
+                        <!-- SL -->
+
+                        <label class="filter-option">
+
+                            {% if selected_class_name == "SL" %}
+
+                                <input type="radio"
+                                       name="classes"
+                                       value="SL"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="classes"
+                                       value="SL">
+
+                            {% endif %}
+
+                            <span>
+                                Sleeper (SL)
+                            </span>
+
+                        </label>
+
+
+                        <!-- GEN -->
+
+                        <label class="filter-option">
+
+                            {% if selected_class_name == "GEN" %}
+
+                                <input type="radio"
+                                       name="classes"
+                                       value="GEN"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="classes"
+                                       value="GEN">
+
+                            {% endif %}
+
+                            <span>
+                                General (GEN)
+                            </span>
+
+                        </label>
+
+
+                        <!-- 2S -->
+
+                        <label class="filter-option">
+
+                            {% if selected_class_name == "2S" %}
+
+                                <input type="radio"
+                                       name="classes"
+                                       value="2S"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="classes"
+                                       value="2S">
+
+                            {% endif %}
+
+                            <span>
+                                Second Sitting (2S)
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+                </details>
+
+
+                <!-- PASSENGERS -->
+
+                <details class="filter-section">
+
+                    <summary class="filter-heading">
+                        Passengers
+                    </summary>
+
+
+                    <div class="passenger-options">
+
+
+                        <!-- 1 -->
+
+                        <label class="filter-option">
+
+                            {% if passengers == "1" %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="1"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="1">
+
+                            {% endif %}
+
+                            <span>
+                                1 Passenger
+                            </span>
+
+                        </label>
+
+
+                        <!-- 2 -->
+
+                        <label class="filter-option">
+
+                            {% if passengers == "2" %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="2"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="2">
+
+                            {% endif %}
+
+                            <span>
+                                2 Passengers
+                            </span>
+
+                        </label>
+
+
+                        <!-- 3 -->
+
+                        <label class="filter-option">
+
+                            {% if passengers == "3" %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="3"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="3">
+
+                            {% endif %}
+
+                            <span>
+                                3 Passengers
+                            </span>
+
+                        </label>
+
+
+                        <!-- 4 -->
+
+                        <label class="filter-option">
+
+                            {% if passengers == "4" %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="4"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="4">
+
+                            {% endif %}
+
+                            <span>
+                                4 Passengers
+                            </span>
+
+                        </label>
+
+
+                        <!-- 5 -->
+
+                        <label class="filter-option">
+
+                            {% if passengers == "5" %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="5"
+                                       checked>
+
+                            {% else %}
+
+                                <input type="radio"
+                                       name="passengers"
+                                       value="5">
+
+                            {% endif %}
+
+                            <span>
+                                5 Passengers
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+                </details>
+
+
+                <!-- JOURNEY DATE -->
+
+                <div class="journey-date">
+
+                    <div class="filter-heading1">
+                        Date
+                    </div>
+
+                    <div class="date-select">
+
+                        <input type="date"
+                               name="journey_date"
+                               id="journey_date"
+                               value="{{ journey_date }}"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STARTING POINT -->
+
+                <div class="start">
+
+                    <div class="filter-heading1">
+                        Starting Point
+                    </div>
+
+                    <div class="station-select">
+
+                        <select name="starting_station"
+                                id="starting_station"
+                                required>
+
+                            <option value="">
+                                Select Starting Station
+                            </option>
+
+
+                            {% for station in stations %}
+
+                                {% if station.id == selected_start %}
+                                    <option value="{{ station.id }}"
+                                            selected>
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% else %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DESTINATION -->
+                <div class="dest">
+                    <div class="filter-heading1"> Destination </div>
+                    <div class="station-select">
+                        <select name="destination_station"  id="destination_station"  required>
+                            <option value="">Select Destination Station</option>
+                            {% for station in stations %}
+                                {% if station.id == selected_destination %}
+                                    <option value="{{ station.id }}"
+                                            selected>
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% else %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- APPLY FILTERS -->
+                <button type="submit" class="apply-btn">
+                    Apply Filters
+                </button>
+            </form>
+        </div>
+
+        <!-- AVAILABLE TRAINS -->
+        <div class="card22 card">
+            <h6>Available Trains :</h6>
+            {% for train in trains %}
+                <div class="train-card">
+                    <!-- TRAIN NAME -->
+                    <div class="train-card-name">
+                        <h5>{{ train.train_number }}</h5>
+                        <h6> {{ train.train_name }}</h6>
+                    </div>
+                    <!-- STATIONS AND TIME -->
+                    <div class="train-card-stops">
+                        <div class="station">
+                            <p>{{ selected_start_station.station_name }}</p>
+                            <p>{{ train.selected_departure }}</p>
+                        </div>
+                        <div class="route-line">
+                            <span></span>
+                            <div class="line"></div>
+                            <span></span>
+                        </div>
+                        <div class="station">
+                            <p>{{ selected_destination_station.station_name }}</p>
+                            <p>{{ train.selected_arrival }}</p>
+                        </div>
+                    </div>
+                    <!-- AVAILABLE CLASS -->
+                    <div class="deparr">
+                        <p>Class Available:{{ train.classes }}</p>
+                    </div>
+                    <!-- PROCEED -->
+                    {% if selected_class_name %}
+                        <a href="{% url 'proceed' train.id %}?starting_station={{ selected_start }}&destination_station={{ selected_destination }}&journey_date={{ journey_date }}&train_class={{ selected_class_name }}&passengers={{ passengers }}"
+                           class="btn btn-primary proceed-btn">Proceed </a>
+                    {% endif %}
+                </div>
+                <br>
+            {% empty %}
+                <p>No trains found for the selected filters.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

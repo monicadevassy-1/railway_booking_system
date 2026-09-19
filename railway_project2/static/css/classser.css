@@ -1,0 +1,381 @@
+* {margin: 0;}
+.title1{padding-top: 2%;}
+.bagbody{
+    /* background-color:blue; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;}
+.bagtop{
+    color: white;
+    padding-top: 2%;
+    padding-left: 5%;
+    width: 100%;
+    height: 20%;
+    background-color: green;
+    background-image: url("../images/vande-bharat.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/login.jpeg");}
+.bagtop h2{
+    font-weight: bold;}
+.bagbottom{
+    margin-top:3% ;
+    width: 80%;
+    height: 80%;
+    /* background-color: orange; */
+    margin-left: 3%;
+    margin-right:5% ;
+    display: flex;}
+.bagleft{
+    width:50%;}
+    /* background-color: greenyellow;} */
+.bagleft h3,h5{
+    font-weight: bold;}
+.bagright{
+    width: 50%;
+    /* background-color: rgb(240, 192, 192); */
+    margin-top: 3.5%;
+    margin-left: 1%;}
+.alertimg{width: 20px;height: 20px;}
+.breadcrumb-item,
+.breadcrumb-item.active {
+    color: white !important;}
+.breadcrumb-item a {
+    color: white !important;
+    text-decoration: none;}
+.breadcrumb-item + .breadcrumb-item::before {
+    color: white !important;}
+.notediv{display: flex;flex-direction: column;}
+
+.bagrighttop h5{font-weight: bold;}
+
+
+.baggage-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;}
+.title1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;}
+    /* background-color: palevioletred; */
+.baggage-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;}
+.title1 h5 {
+    margin: 0;}
+.cards{display: flex;gap: 2%;width: 100%;padding-bottom: 2%;}
+
+.card-img-top{width: 100%;height:50%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   CLASSES & SERVICES RESPONSIVE
+   ========================================= */
+
+
+/* ---------- DESKTOP ---------- */
+
+@media (min-width: 769px) {
+
+    .bagbody {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .bagtop {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .bagbottom {
+        width: 94%;
+        margin: 3% auto;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+    .bagbodytop {
+        width: 100%;
+    }
+
+    .cards {
+        width: 100%;
+        display: flex;
+        gap: 2%;
+    }
+
+    .cards .card {
+        width: 18% !important;
+        flex: 1;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 165px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .bagbody {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- Top Banner ---------- */
+
+    .bagtop {
+        width: 100%;
+        height: auto;
+
+        padding: 25px 30px;
+
+        box-sizing: border-box;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bagtop h2 {
+        font-size: 26px;
+    }
+
+
+    /* ---------- Main Section ---------- */
+
+    .bagbottom {
+        width: 92%;
+
+        margin: 30px auto;
+
+        display: block;
+
+        box-sizing: border-box;
+    }
+
+    .bagbodytop {
+        width: 100%;
+    }
+
+    .bagbodytop > h5 {
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+
+
+    /* ---------- Cards ---------- */
+
+    .cards {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        justify-content: center;
+    }
+
+    .cards .card {
+        width: calc(50% - 10px) !important;
+
+        flex: none;
+
+        margin: 0;
+    }
+
+
+    .card-img-top {
+        width: 100%;
+        height: 170px;
+
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-text {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .bagbody {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- Banner ---------- */
+
+    .bagtop {
+        padding: 20px 15px;
+
+        min-height: 100px;
+    }
+
+    .bagtop h2 {
+        font-size: 22px;
+    }
+
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+
+    /* ---------- Main Content ---------- */
+
+    .bagbottom {
+        width: 92%;
+
+        margin: 25px auto;
+    }
+
+    .bagbodytop > h5 {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+
+
+    /* ---------- One Card Per Row ---------- */
+
+    .cards {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: center;
+    }
+
+    .cards .card {
+        width: 100% !important;
+
+        max-width: 350px;
+
+        flex: none;
+    }
+
+
+    /* ---------- Images ---------- */
+
+    .card-img-top {
+        width: 100%;
+
+        height: 180px;
+
+        object-fit: cover;
+    }
+
+
+    /* ---------- Card Text ---------- */
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-text {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .bagtop {
+        padding: 18px 12px;
+    }
+
+    .bagtop h2 {
+        font-size: 20px;
+    }
+
+    .bagbottom {
+        width: 94%;
+    }
+
+    .bagbodytop > h5 {
+        font-size: 17px;
+    }
+
+
+    .cards .card {
+        width: 100% !important;
+        max-width: 320px;
+    }
+
+
+    .card-img-top {
+        height: 160px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 12px;
+    }
+}

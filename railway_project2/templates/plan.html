@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/plan.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="trainsbody">
+        <div class="col1">
+            <div class="row11">
+                <h2>Plan Your Trip</h2>
+                <p>Plan your journey ,explore destinations, and makeyour railway travel easier.</p>
+            </div>
+            <div class="row12">
+                <div class="card row12card">
+                    <!-- from bootstrap -->
+                       <a href="{% url 'plan' %}" class="btn btn-outline-primary active mb-2">
+                            Popular Destinations
+                        </a>
+
+                        <a href="{% url 'tips' %}" class="btn btn-outline-primary   mb-2">
+                            Travel Tips
+                        </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col2">
+            <div class="card21 card">
+                <div class="cardhead">
+                    <h4>Plan Your Trip</h4>
+                </div>
+                <form method="GET" action="{% url 'booking' %}">
+                    <div class="tofrom">
+                        <!-- from bootstrap -->
+                        <div class="from">
+                            <label for="Sourcestation" class="from">From</label>
+                            <select name="starting_station" id="Sourcestation"class="form-select"required>
+                                <option value="">📍 Source Station</option>
+                                {% for station in stations %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_code }} - {{ station.station_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="to">
+                            <label for="DestinationStation" class="to">To</label>
+                            <select name="destination_station"id="DestinationStation"  class="form-select"required>
+                                <option value="">📍 Destination Station</option>
+                                {% for station in stations %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_code }} - {{ station.station_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="jdateclass">
+                        <!-- from bootstrap -->
+                        <div class="jdate">
+                            <label for="">Journey Date</label>
+                            <input type="date" name="journey_date" required>
+                            
+                        </div>
+                        <div class="class">
+                            <label for="class" class="form-label">Class</label>
+                            <select class="form-select" id="trainClass" name="train_class" required>
+                                <option value="">Choose your class</option>
+                                <!-- <strong> -->
+                                {% for class_type in class_types %}
+                                    <option value="{{ class_type.id }}">
+                                        {{ class_type.class_name }}
+                                    </option>
+                                {% endfor %}
+                                <!-- </strong> -->
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="searchbtn">
+                        <button class="btn  btn-primary" type="submit">🔍 Plan My Trip</button>
+                    </div>
+                </form>
+
+                <div class="popsearch">
+                    <h5>Popular Destinations</h5>
+                    <div class="popbtn">
+                        <div class="popbtn1">
+                            <button class="btn  popbtn3 btn-outline-primary" type="submit">Delhi </button>
+                            <button class="btn  popbtn3 btn-outline-primary" type="submit">Mumbai </button>
+                            <button class="btn  popbtn3 btn-outline-primary" type="submit">Kolkata </button>
+                            <button class="btn  popbtn3 btn-outline-primary" type="submit">Chennai </button>
+                        </div>
+                        <br>
+                        <div class="popbtn2">
+                            <button class="btn popbtn3  btn-outline-primary" type="submit">Bengaluru</button>
+                            <button class="btn popbtn3 btn-outline-primary" type="submit">Hyderabad</button>
+                            <button class="btn popbtn3 btn-outline-primary" type="submit">Jaipur</button> 
+                            <button class="btn popbtn3 btn-outline-primary" type="submit">Goa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{%endblock%}

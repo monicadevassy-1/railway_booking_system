@@ -1,0 +1,394 @@
+* {margin: 0;}
+.title1{padding-top: 2%;}
+
+.breadcrumb-item,
+.breadcrumb-item.active {
+    color: white !important;}
+.breadcrumb-item a {
+    color: white !important;
+    text-decoration: none;}
+.breadcrumb-item + .breadcrumb-item::before {
+    color: white !important;}
+
+.bagbody{
+    /* background-color:blue; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;}
+.bagtop{
+    color: white;
+    padding-top: 2%;
+    padding-left: 5%;
+    width: 100%;
+    height: 20%;
+    /* background-color: green; */
+    background-image: url("../images/vande-bharat.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/login.jpeg");}
+.bagtop h2{
+    font-weight: bold;}
+
+.bagbottom{
+    margin-top:3% ;
+    margin-bottom:3% ;
+    width: 80%;
+    height: 80%;
+    /* background-color: orange; */
+    margin-left: 10%;
+    margin-right:5% ;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 20px;}
+
+
+
+.line1,.line2{display: flex;gap:2%}
+.card{
+    background-color:rgb(28, 2, 66);
+    color: white;
+    width:60%;
+    height: 200px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(176, 197, 239);}
+.cardtop{
+    padding: 2%;
+    border-radius: 15px;
+    background-color: white;
+    color: rgb(28, 2, 66);
+    display: flex;justify-content: start;
+    align-items: center;gap:10%}
+.card-img-top{width: 50px;height: 50px;}
+.cardbottom p {
+    padding: 15px;}
+.cardtop h3{font-weight: bold;}
+/* .cardbottom{background-color: rgb(208, 208, 251);} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   ONBOARD SERVICES RESPONSIVE
+   ========================================= */
+
+
+/* ---------- DESKTOP ---------- */
+
+@media (min-width: 769px) {
+
+    .bagbody {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .bagtop {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .bagbottom {
+        width: 90%;
+        margin: 3% auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .line1,
+    .line2 {
+        width: 100%;
+        display: flex;
+        gap: 2%;
+    }
+
+    .card {
+        width: 18.4%;
+        height: 200px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+
+    .cardtop {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .cardtop h3 {
+        font-size: 18px;
+    }
+
+    .card-img-top {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+    }
+
+    .cardbottom p {
+        padding: 12px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .bagbody {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- Banner ---------- */
+
+    .bagtop {
+        width: 100%;
+        height: auto;
+
+        padding: 25px 30px;
+
+        box-sizing: border-box;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bagtop h2 {
+        font-size: 26px;
+    }
+
+
+    /* ---------- Main Content ---------- */
+
+    .bagbottom {
+        width: 92%;
+
+        margin: 25px auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- Cards ---------- */
+
+    .line1,
+    .line2 {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        justify-content: center;
+    }
+
+    .card {
+        width: calc(50% - 10px);
+
+        height: 210px;
+
+        flex-shrink: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    .cardtop {
+        padding: 10px;
+
+        gap: 8px;
+    }
+
+    .cardtop h3 {
+        font-size: 17px;
+    }
+
+    .card-img-top {
+        width: 45px;
+        height: 45px;
+
+        object-fit: contain;
+    }
+
+    .cardbottom p {
+        padding: 12px;
+
+        font-size: 13px;
+
+        line-height: 1.4;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .bagbody {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- Banner ---------- */
+
+    .bagtop {
+        padding: 20px 15px;
+
+        min-height: 100px;
+    }
+
+    .bagtop h2 {
+        font-size: 22px;
+    }
+
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+
+    /* ---------- Main Content ---------- */
+
+    .bagbottom {
+        width: 92%;
+
+        margin: 20px auto;
+
+        gap: 20px;
+    }
+
+
+    /* ---------- One Card Per Row ---------- */
+
+    .line1,
+    .line2 {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+
+        max-width: 350px;
+
+        height: auto;
+
+        min-height: 200px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- Card Header ---------- */
+
+    .cardtop {
+        padding: 10px 12px;
+
+        gap: 10px;
+    }
+
+    .cardtop h3 {
+        font-size: 18px;
+    }
+
+    .card-img-top {
+        width: 45px;
+        height: 45px;
+
+        object-fit: contain;
+    }
+
+
+    /* ---------- Card Description ---------- */
+
+    .cardbottom p {
+        padding: 12px 15px;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .bagtop {
+        padding: 18px 12px;
+    }
+
+    .bagtop h2 {
+        font-size: 20px;
+    }
+
+    .bagbottom {
+        width: 94%;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .cardtop h3 {
+        font-size: 16px;
+    }
+
+    .cardbottom p {
+        font-size: 12px;
+    }
+}

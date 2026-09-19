@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   MAIN BODY
+========================================= */
+
+.proceedbody {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+
+    background-image:
+        linear-gradient(
+            rgba(0, 20, 40, 0.45),
+            rgba(0, 20, 40, 0.45)
+        ),
+        url("/static/images/helps.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    padding: 25px 0 40px;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-container {
+    width: 82%;
+    margin: 15px auto 30px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+/* Each step */
+
+.progress-step {
+    width: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+/* Circle */
+
+.progress-dot {
+    width: 24px;
+    height: 24px;
+
+    border: 3px solid #b7c0cc;
+    border-radius: 50%;
+
+    background-color: white;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Active blue circle */
+
+.progress-step.active .progress-dot {
+    border: 4px solid #8db8f5;
+    background-color: #0d6efd;
+
+    box-shadow: 0 0 0 4px #dceaff;
+}
+
+
+/* Text */
+
+.progress-step h5 {
+    margin-top: 10px;
+
+    font-weight: bold;
+    color: white;
+
+    white-space: nowrap;
+
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Active text */
+
+.progress-step.active h5 {
+    color: #8db8f5;
+}
+
+
+/* Line */
+
+.progress-line {
+    height: 3px;
+
+    background-color: rgba(255, 255, 255, 0.65);
+
+    flex: 1;
+
+    margin-top: 11px;
+
+    min-width: 80px;
+}
+
+
+/* =========================================
+   JOURNEY CONTAINER
+========================================= */
+
+.journey-container {
+    width: 82%;
+    margin: auto;
+}
+
+
+.journey-container > h2 {
+    margin-bottom: 10px;
+
+    color: white;
+
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================
+   JOURNEY CARD
+========================================= */
+
+.journey-card {
+    width: 100%;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   TRAIN HEADING
+========================================= */
+
+.train-heading {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.train-heading h3 {
+    color: #17212f;
+
+    font-size: 26px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   ROUTE SECTION
+========================================= */
+
+.route-section {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    margin: 10px 0 25px;
+}
+
+
+/* Station */
+
+.station {
+    width: 25%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* Station code */
+
+.station-code {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #17212f;
+
+    line-height: 1.2;
+}
+
+
+/* Station name */
+
+.station-name {
+    font-size: 18px;
+
+    color: #202b38;
+
+    margin-top: 6px;
+}
+
+
+/* =========================================
+   ROUTE LINE
+========================================= */
+
+.route-line {
+    width: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.route-dot {
+    width: 18px;
+    height: 18px;
+
+    background-color: #0d6efd;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+
+.dotted-line {
+    flex: 1;
+
+    border-top: 3px dotted #0d6efd;
+
+    margin: 0 5px;
+}
+
+
+/* =========================================
+   HORIZONTAL LINE
+========================================= */
+
+.journey-card hr {
+    border: 0;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    margin: 20px 0;
+}
+
+
+/* =========================================
+   JOURNEY INFORMATION
+========================================= */
+
+.journey-info {
+    width: 100%;
+
+    display: flex;
+
+    align-items: stretch;
+}
+
+
+.journey-details {
+    width: 50%;
+
+    padding-right: 40px;
+
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.fare-details {
+    width: 50%;
+
+    padding-left: 40px;
+}
+
+
+.journey-info p {
+    font-size: 16px;
+
+    margin-bottom: 16px;
+
+    color: #202b38;
+}
+
+
+.journey-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.journey-card .total {
+    font-size: 23px;
+
+    color: #17212f;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================
+   CONFIRM BUTTON
+========================================= */
+
+.confirm-form {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.confirm-btn {
+    width: 55%;
+
+    background-color: #0d6efd;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 13px 25px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+
+.confirm-btn:hover {
+    background-color: #0b5ed7;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .proceedbody {
+        background-attachment: scroll;
+    }
+
+
+    .progress-container {
+        width: 90%;
+
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+
+    .progress-line {
+        min-width: 40px;
+    }
+
+
+    .journey-container {
+        width: 90%;
+    }
+
+
+    .journey-card {
+        padding: 20px;
+    }
+
+
+    .train-heading h3 {
+        font-size: 24px;
+    }
+
+
+    .station-code {
+        font-size: 26px;
+    }
+
+
+    .station-name {
+        font-size: 16px;
+    }
+
+
+    .confirm-btn {
+        width: 70%;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .proceedbody {
+        padding-top: 20px;
+        padding-bottom: 40px;
+
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+
+    .progress-container {
+        width: 92%;
+
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+
+    .progress-step {
+        width: 60px;
+    }
+
+
+    .progress-dot {
+        width: 20px;
+        height: 20px;
+
+        border-width: 2px;
+    }
+
+
+    .progress-step.active .progress-dot {
+        border-width: 3px;
+    }
+
+
+    .progress-line {
+        min-width: 20px;
+
+        height: 2px;
+
+        margin-top: 9px;
+    }
+
+
+    .progress-step h5 {
+        font-size: 13px;
+
+        margin-top: 7px;
+    }
+
+
+    .journey-container {
+        width: 94%;
+    }
+
+
+    .journey-container > h2 {
+        font-size: 24px;
+    }
+
+
+    .journey-card {
+        padding: 16px;
+
+        border-radius: 12px;
+    }
+
+
+    /* Train heading */
+
+    .train-heading {
+        margin-bottom: 20px;
+    }
+
+
+    .train-heading h3 {
+        font-size: 20px;
+    }
+
+
+    /* Route */
+
+    .route-section {
+        margin-bottom: 20px;
+    }
+
+
+    .station {
+        width: 30%;
+    }
+
+
+    .route-line {
+        width: 40%;
+    }
+
+
+    .route-dot {
+        width: 12px;
+        height: 12px;
+    }
+
+
+    .dotted-line {
+        border-top-width: 2px;
+    }
+
+
+    .station-code {
+        font-size: 21px;
+    }
+
+
+    .station-name {
+        font-size: 13px;
+
+        line-height: 1.3;
+    }
+
+
+    /* Information */
+
+    .journey-info {
+        flex-direction: column;
+    }
+
+
+    .journey-details {
+        width: 100%;
+
+        padding-right: 0;
+
+        padding-bottom: 15px;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+
+    .fare-details {
+        width: 100%;
+
+        padding-left: 0;
+
+        padding-top: 20px;
+    }
+
+
+    .journey-info p {
+        font-size: 14px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .journey-card .total {
+        font-size: 20px;
+    }
+
+
+    /* Confirm */
+
+    .confirm-btn {
+        width: 90%;
+
+        padding: 12px 20px;
+
+        font-size: 16px;
+
+        border-radius: 50px;
+    }
+
+}

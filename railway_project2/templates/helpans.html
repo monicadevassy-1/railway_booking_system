@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/helpans.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="helpsbody">
+        <div class="row1">
+            <div class="card11">
+                <h1 class="helphead fw-bold">Help & Support</h1>
+                <p>We are here to help you 24 x 7.</p>
+            </div>
+            <div class="card12 card">
+                <h5>{{ question }}</h5>
+                <br>
+                <div class="part1">
+                <div class="que">
+                    {% if question == "Can I cancel my Train ticket?" %}
+                        <h5>How to Cancel an E-Ticket</h5>
+                        <p>💠 Log in to your account on the IRCTC Official Website or app.</p>
+                        <p>💠 Go to the "Booked Tickets" link under your account menu.</p>
+                        <p>💠 Select the ticket you want to cancel.</p>
+                        <p>💠 Choose the specific passengers if you need a partial cancellation.</p>
+                        <p>💠 Confirm the cancellation to process your refund.</p>
+                            
+                        <h5>Key Rules to Remember</h5>
+                        <h6><strong>Chart Preparation: </strong></h6>
+                        <p>You cannot cancel e-tickets online after the reservation chart has been prepared. You must file a TDR (Ticket Deposit Receipt) online instead.</p>
+                        <h6><strong>Refund Timeline: </strong></h6>
+                        <p>Refunds are typically credited back to the original payment account within 5 to 7 working days.</p>
+                        <h6><strong>Counter Tickets: </strong></h6>
+                        <p>Tickets bought physically at a railway counter cannot be canceled through a regular user login on the main site; they require the Counter Ticket Cancellation Portal or a PRS counter</p>
+
+                    {% elif question == "What is the baggage allowance?" %}
+                        <h6><strong>AC First Class:  </strong></h6>
+                        <p>70 kg free (maximum up to 150 kg with paid excess charges).</p>
+                        
+                        <h6><strong>AC 2-Tier & First Class: </strong></h6>
+                        <p>50 kg free (maximum up to 100 kg with paid excess charges).</p>
+                        
+                        <h6><strong>Sleeper Class:  </strong></h6>
+                        <p>40 kg free (maximum up to 80 kg with paid excess charges).</p>
+                        
+                        <h6><strong>Second Class (General):  </strong></h6>
+                        <p>35 kg free (maximum up to 70 kg with paid excess charges).</p>
+                        
+                        <h6><strong>AC 3-Tier, AC 3 Economy & AC Chair Car: </strong></h6>
+                        <p>40 kg limit (free allowance and maximum limit are both 40 kg. paid excess luggage is not permitted in these classes).</p>
+                        
+                    {% elif question == "Can I get a refund?" %}
+                        <h6><strong>Confirmed Regular Tickets: </strong></h6>
+                        <p>Cancel up to 4 hours before the train leaves to get a partial refund minus cancellation fees.</p>
+                        <h6><strong>Confirmed Tatkal Tickets: </strong></h6>
+                        <p>You do not get a refund if you cancel a confirmed Tatkal ticket.</p>
+                        <h6><strong>RAC and Waitlisted Tickets: </strong></h6>
+                        <p>Cancel up to 30 minutes before departure to get a refund minus a small flat clerkage fee.</p>
+                        <h6><strong>Fully Cancelled Trains:</strong></h6>
+                        <p>If Indian Railways cancels the train, you get a full automatic refund with no need to cancel manually.</p>
+                        <h6><strong>Delayed Trains: </strong></h6>
+                        <p>If your train is delayed by more than 3 hours and you choose not to travel, you can file a TDR (Ticket Deposit Receipt) for a full refund</p> 
+                    {% elif question == "Is food available on trains?" %}
+                        <h6><strong>Onboard Pantry Cars:  </strong></h6>
+                        <p>Many Mail, Express, Rajdhani, Shatabdi, and Duronto trains have pantry cars that serve cooked meals, snacks, and beverages directly at your seat.</p>
+                        <h6><strong>IRCTC eCatering ("Food on Track"): </strong></h6>
+                        <p>You can order meals from authorized local restaurants and food chains (like Haldiram's or Domino's) to be delivered right to your seat at hundreds of major railway stations</p>
+                        <h6><strong>Partner Apps: </strong></h6>
+                        <p>You can order food using the official IRCTC eCatering Website, the "Food on Track" app, or partner delivery services like Zomato and Swiggy by entering your 10-digit PNR number</p>
+                        <h6><strong>Pre-Booking: </strong></h6>
+                        <p>Premium trains include meals in the ticket fare, and select Express trains now offer an E-Pantry option to pre-order meals during ticket booking</p>
+                        <h6><strong>Phone Orders: </strong></h6>
+                        <p>You can call the toll-free number 1323 to place a food order over the phone</p>
+                    {% elif question == "Do Children need ticket?" %}
+                        <h5>Children Under 5 Years Old</h5>
+                        <h6><strong>No ticket / Fare needed: </strong></h6>
+                        <p>If the child travels without a separate seat or berth and shares one with a parent, they travel completely free. You must still enter their name and age in the passenger details during booking, though their name will not appear on the final reservation chart.</p>
+                        <h6><strong>Full fare for a berth: </strong></h6>
+                        <p>If you want a dedicated seat or berth for your child under 5, you must pay the full adult fare.</p>
+                        <h5>Children Aged 5 to Under 12 Years Old </h5>
+                        <h6><strong>Half fare (No Berth):</strong></h6>
+                        <p>If you choose the "No Seat/No Berth" (NOSB) option during booking, you pay half of the adult fare, and the child shares your seat/berth.</p>
+                        <h6><strong>Full fare (With Berth): </strong></h6>
+                        <p>If you want a separate seat or berth assigned to the child, you must pay the full adult fare.</p>
+                        <h5>Children 12 Years and Older </h5>
+                        <h6><strong>Full adult ticket:</strong></h6>
+                        <p>Anyone aged 12 or older is considered an adult by Indian Railways and must purchase a full-fare ticket with a designated seat or berth.</p>
+                    {% else %}
+                        <p>Sorry, we could not find an answer for this question.</p>
+                    {% endif %}
+                </div>
+            </div>
+           
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+
+<link rel="stylesheet"
+      href="{% static 'css/chatstaff.css' %}">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="chatstaff-page">
+
+
+    <!-- CHAT BOX -->
+
+    <div class="chat-container">
+
+
+        <!-- HEADER -->
+
+        <div class="chat-header">
+
+            <h2>Chat with Staff</h2>
+
+            <p>
+                Our support team is here to help you.
+            </p>
+
+        </div>
+
+
+
+        <!-- CHAT BODY -->
+
+        <div class="chat-body">
+
+
+            <!-- WELCOME MESSAGE -->
+<!-- 
+            <div class="staff-message">
+
+                <strong>Staff</strong>
+
+                <p>
+                    Hello! 👋
+                </p>
+
+                <p>
+                    How can I help you today?
+                </p>
+
+            </div> -->
+
+
+
+            <!-- PREVIOUS CONVERSATIONS -->
+
+            {% if user_messages %}
+<!-- 
+                <h3 class="previous-title">
+                    Previous Conversations
+                </h3> -->
+                {% for msg in user_messages %}
+                    <!-- USER MESSAGE -->
+                    <div class="user-message">
+                        <p class="subject">
+                            Topic: {{ msg.subject }}
+                        </p> 
+                        <strong>You : </strong>
+                        <!-- <p class="subject">
+                            {{ msg.subject }}
+                        </p> -->
+                        <p>
+                            {{ msg.message }}
+                        </p>
+                    </div>
+
+                    <!-- STAFF REPLY -->
+                    {% if msg.staff_reply %}
+                        <div class="staff-message">
+                            <strong>Staff</strong>
+                            <p>
+                                {{ msg.staff_reply }}
+                            </p>
+                        </div>
+
+                    {% else %}
+                        <div class="staff-message waiting">
+                            <strong>Staff</strong>
+                            <p>
+                                Waiting for staff reply...
+                            </p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div class="staff-message">
+                    <strong>Staff</strong>
+                    <p>
+                        You don't have any previous conversations.
+                    </p>
+                    <p>
+                        Click "Start New Chat" to contact us.
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+
+
+
+        <!-- START NEW CHAT -->
+
+        <details class="new-chat">
+
+
+            <summary class="new-chat-button">
+
+                + Start New Chat
+
+            </summary>
+
+
+
+            <!-- NEW CHAT FORM -->
+
+            <div class="new-chat-form">
+
+
+                <h3>
+                    Start New Chat
+                </h3>
+
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+
+                    <!-- TOPIC -->
+
+                    <label>
+                        Topic
+                    </label>
+
+
+                    <input type="text"
+                           name="subject"
+                           placeholder="Enter your topic"
+                           required>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <label>
+                        Message
+                    </label>
+
+
+                    <textarea name="message"
+                              rows="5"
+                              placeholder="Write your message here..."
+                              required></textarea>
+
+
+
+                    <!-- SEND -->
+
+                    <button type="submit">
+
+                        Send Message
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+        </details>
+
+
+
+        <!-- BACK BUTTON -->
+
+        <a href="{% url 'helps' %}"
+           class="back-button">
+
+            ← Back to Help & Support
+
+        </a>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

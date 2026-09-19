@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/classser.css' %}">
+{% endblock %}
+{% block content %}
+  
+<div class="bagbody">
+    <div class="bagtop">
+        <h2>Classes & Services</h2>
+        <!-- from bootstrap -->
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Classes & Services</li>
+            </ol>
+        </nav>
+
+    </div>
+    <div class="bagbottom">
+        <div class="bagbodytop">
+            <h5>Travel Classes</h5>    
+            <div class="cards">
+                <!-- from bootstrap -->
+                <div class="card card1" style="width: 18rem;">
+                    <img src=" {% static 'images/1ac.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">First AC(1A)</h5>
+                        <p class="card-text"> Luxury cabins with more privacy and premium services.</p>
+                    </div>
+                </div>
+                <div class="card card2" style="width: 18rem;">
+                    <img src="{% static 'images/2ac.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Second AC(2A)</h5>
+                        <p class="card-text">Comfortable travel with conditioned coaches</p>
+                        
+                    </div>
+                </div>
+                <div class="card card3" style="width: 18rem;">
+                    <img src="{% static 'images/3ac.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Third AC(3A)</h5>
+                        <p class="card-text"> Affordable AC travel with all basic amenities</p>
+                        
+                    </div>
+                </div>
+                <div class="card card4" style="width: 18rem;">
+                    <img src="{% static 'images/sleeper.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Sleeper (SL)</h5>
+                        <p class="card-text">Economical travel with  sleeper berths</p>
+                        
+                    </div>
+                </div>
+                <div class="card card5" style="width: 18rem;">
+                    <img src="{% static 'images/general.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">General (2S)</h5>
+                        <p class="card-text">Budget-friendly travel for short distances</p>
+                        
+                    </div>
+                </div>                 
+            </div>
+        </div>
+        <div class="bagbodybottom">
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+{%endblock%}

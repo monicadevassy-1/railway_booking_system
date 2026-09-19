@@ -1,0 +1,87 @@
+<div class="modal fade" id="addTrain">
+    <div class="modal-dialog">
+        <div class="modal-content add-train-modal">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Train </h5>
+                <button type="button" class="btn-close"data-bs-dismiss="modal"></button>
+            </div>
+
+            
+            <div class="modal-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden"name="action"value="add">
+                    <div class="mb-3">
+                        <label class="form-label">Train Name </label>
+                        <input type="text"name="train_name"class="form-control"required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Train Number</label>
+                        <input type="number" name="train_number" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"> Source </label>
+                        <select name="source" class="form-control"required>
+                            <option value="">Select Source</option>
+                            {% for station in stations %}
+                                <option value="{{ station.id }}">
+                                    {{ station.station_name }}
+                                    ({{ station.station_code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"> Destination </label>
+                        <select name="destination" class="form-control"required>
+                            <option value="">Select Destination</option>
+                            {% for station in stations %}
+                                <option value="{{ station.id }}">
+                                    {{ station.station_name }}
+                                    ({{ station.station_code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">  Departure</label>
+                        <input type="time" name="departure"class="form-control"required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"> Arrival </label>
+                        <input type="time" name="arrival" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"> Journey Days</label>
+                        <input type="number"name="journey_days"class="form-control" min="1"value="1" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Classes</label>
+                        <input type="text" name="classes"class="form-control" placeholder="Example: SL, 3A, 2A, 1A"required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Status </label>
+                        <select name="status"class="form-control"required>
+                            <option value="Active">Active </option>
+                            <option value="Inactive">Inactive </option>
+                        </select>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                        <button type="submit" class="btn btn-primary">Add Train </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

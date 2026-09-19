@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/proceed.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="proceedbody">
+
+    <!-- Progress Line -->
+    <div class="progress-container">
+
+        <div class="progress-step active">
+            <div class="progress-dot"></div>
+            <h5>Booking</h5>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">
+            <div class="progress-dot"></div>
+            <h5>Payment</h5>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">
+            <div class="progress-dot"></div>
+            <h5>Ticket</h5>
+        </div>
+
+    </div>
+
+
+    <!-- Journey Details -->
+    <div class="journey-container">
+
+        <h2>
+            <strong>Journey Details</strong>
+        </h2>
+
+
+        <div class="journey-card">
+
+            <!-- Train Name -->
+            <div class="train-heading">
+                <h3>
+                    <strong>
+                        {{ train.train_number }} - {{ train.train_name }}
+                    </strong>
+                </h3>
+            </div>
+
+
+            <!-- Source / Destination -->
+            <div class="route-section">
+
+                <!-- Source -->
+                <div class="station source-station">
+
+                    <div class="station-code">
+                        {{ selected_start_station.station_code }}
+                    </div>
+
+                    <div class="station-name">
+                        {{ selected_start_station.station_name }}
+                    </div>
+
+                </div>
+
+
+                <!-- Route Line -->
+                <div class="route-line">
+                    <span class="route-dot"></span>
+                    <div class="dotted-line"></div>
+                    <span class="route-dot"></span>
+                </div>
+
+
+                <!-- Destination -->
+                <div class="station destination-station">
+
+                    <div class="station-code">
+                        {{ selected_destination_station.station_code }}
+                    </div>
+
+                    <div class="station-name">
+                        {{ selected_destination_station.station_name }}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- Journey Information -->
+            <div class="journey-info">
+
+                <div class="journey-details">
+
+                    <p>
+                        <strong>Journey Date:</strong>
+                        {{ journey_date }}
+                    </p>
+
+                    <p>
+                        <strong>Class:</strong>
+                        {{ selected_class.class_type.class_name }}
+                    </p>
+
+                    <p>
+                        <strong>Passengers:</strong>
+                        {{ passengers }}
+                    </p>
+
+                </div>
+
+
+                <div class="fare-details">
+
+                    <p>
+                        <strong>Fare per passenger:</strong>
+                        ₹{{ fare }}
+                    </p>
+
+                    <h4 class="total">
+                        <strong>Total Amount:</strong>
+                        <strong>₹{{ total_amount }}</strong>
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- Confirm Booking -->
+            <form method="POST"
+                  action="{% url 'confirm_booking' %}"
+                  class="confirm-form">
+
+                {% csrf_token %}
+
+                <input type="hidden"
+                       name="train_id"
+                       value="{{ train.id }}">
+
+                <input type="hidden"
+                       name="starting_station"
+                       value="{{ selected_start_station.id }}">
+
+                <input type="hidden"
+                       name="destination_station"
+                       value="{{ selected_destination_station.id }}">
+
+                <input type="hidden"
+                       name="journey_date"
+                       value="{{ journey_date }}">
+
+                <input type="hidden"
+                       name="train_class"
+                       value="{{ selected_class.class_type.class_name }}">
+
+                <input type="hidden"
+                       name="passengers"
+                       value="{{ passengers }}">
+
+                <input type="hidden"
+                       name="total_amount"
+                       value="{{ total_amount }}">
+
+
+                <button type="submit" class="confirm-btn">
+                    Confirm
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

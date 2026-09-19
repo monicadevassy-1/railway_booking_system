@@ -1,0 +1,107 @@
+.resbody{
+    display: flex;
+    width: 100%;
+    /* background-color: yellow; */
+    height: 600px;
+    background-image: url("../images/trains.jpg");
+    background-size: 100% auto;
+    background-position: center;
+    background-image: linear-gradient(
+            rgba(152, 199, 246, 0.275),
+            rgba(0, 45, 90, 0.312)),url("../images/trains.jpg"); }
+.col1{
+    display: flex;
+    /* background-color: red; */
+    flex-direction: column;
+    width: 40%;
+    padding:5% }
+.row11 h2{
+    font-weight: bold;
+    color: white;}
+.row11 p{
+    color: white;}
+.row12{
+    width: 70%;
+    padding-left: 8%;
+    padding-top: 3%;}
+.col2{
+    width: auto;
+    padding-top: 1%;
+    padding-left: 1%;}
+.card21{
+    width:100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;}
+/* .pnrnumber{
+    padding-top: 5%;
+    display: flex;
+    gap: 10%; */
+    /* flex-direction: column; }*/
+.form-control,.btn{
+    width: 100%;
+    text-align: center;}
+/* .pnrnumber{
+    display: flex;
+    flex-direction: column;} */
+.card21 h4,.card21 h5,.card21 label,.list-group-item{
+    font-weight: bold;}
+.cardhead,.pnrbtn{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;}
+.card21 h4,.card21 h5{
+    color: #290575;}
+/* .pnrdetail, .text-pnr{
+    border: none;
+    background-color: rgb(204, 204, 248);} */
+/* .pnrdetail{padding: 20px;}
+.pnrdetail,.text-pnr{color: black;} */
+.row12card {
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+.tofrom{
+    padding-top: 5%;
+    display: flex;
+    gap: 10%;
+    /* flex-direction: column; */}
+.form-control,.btn{
+    width: 100%;}
+.to,.from{
+    display: flex;
+    flex-direction: column;}
+.jdate input{
+    color: gray;
+    padding-left: 10%;
+    width: 160%;
+    height: 108%;
+    border-radius: 5px;
+    border: 1px solid #dad8d8;}
+.form-label{margin-bottom: 0;}
+.train-class{color: grey;}
+.jdateclass{
+    display: flex;
+    gap: 10%;
+    /* flex-direction: column; */}
+.form-control{
+    width: 100%;}
+.class,.jdate{
+    display: flex;
+    flex-direction: column;}
+.card21 h4,.card21 h5,.card21 label,.list-group-item{font-weight: bold;}
+.cardhead,.searchbtn{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;}
+.popbtn{display: flex;flex-direction: column;}
+.pnrdetail, .text-pnr{
+    border: none;
+    background-color: rgb(204, 204, 248);}
+.pnrdetail{padding: 20px;}
+.pnrdetail,.text-pnr{color: black;}
+.popbtn1,.popbtn2{display: flex;gap: 10%;}
+.card21 h4,.card21 h5{color: #290575;}

@@ -1,0 +1,325 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="homebody">
+
+    <!-- ================= SEARCH SECTION ================= -->
+    <div class="row1  hero-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+        <source src="{% static 'videos/dashvideo.mp4' %}" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="col11 align-self-start">
+            <h1 class="display-3 ">Discover India by Rail</h1>
+            <p>Connect with cities, cultures and people across the beautiful landscape of India.</p>
+        </div>
+        <div class="col12 align-self-center">
+            <div class="card col12-card mb-3 ">
+                <form method="GET" action="{% url 'booking' %}">
+                    <div class="card-body">
+
+                        <div class="cardform mb-2">
+                        <select name="starting_station"id="starting_station"class="form-select">
+                                <option value=""> From</option>
+                                {% for station in stations %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_code }} - {{ station.station_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>      
+                        </div>
+                        <div class="cardform mb-2">           
+                            <select name="destination_station" id="destination_station"class="form-select">
+                                <option value="">To </option>
+                                {% for station in stations %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_code }} - {{ station.station_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <!-- DATE -->
+                        <div class="cardform mb-2">
+                            <input type="date" name="journey_date"id="journey_date" class="form-control">
+                        </div>
+
+                        <!-- CLASS -->
+                        <div class="cardform mb-2">
+                            <select name="train_class"id="trainClass"class="form-select">
+                                <option value="">  All Classes</option>
+                                {% for class_type in class_types %}
+                                    <option value="{{ class_type.id }}">
+                                        {{ class_type.class_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- QUOTA -->
+                        <div class="cardform mb-2">
+                            <select class="form-select">
+                                <option selected>General</option>
+                                <option>Ladies</option>
+                                <option>Tatkal</option>
+                                <option>Senior Citizen</option>
+                            </select>
+                        </div>
+
+                        <!-- PASSENGERS -->
+                        <div class="cardform mb-2">
+                            <select name="passengers"id="passengers"class="form-select">
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5">5 Adults</option>
+                            </select>
+                        </div>
+                        <div class="booking-options">
+                            <label><input type="checkbox">Person With Disability Concession</label>
+                            <!-- <label><input type="checkbox">Flexible With Date</label> -->
+                            <label><input type="checkbox">Railway Pass Concession</label>
+                        </div>
+                        <button type="submit">Check Fares</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     
+
+<!-- ================= PLANNING ESSENTIALS ================= -->
+
+    <div class="row2 planning-section">
+        <div class="col21">
+                <h3 class=' planning fw-bold'>Your Planning Essentials</h3>
+                <p>Everything you need to plan your journey comfortably 
+                    and confidently.</p> 
+                <a href="{% url 'plan' %}" class="btn planbtn btn-primary">Plan Your Trip</a>
+        </div>
+        <div class="col22 planning-links">
+            <!-- Baggage -->
+            <a href="{% url 'bag' %}" class="planning-item">
+                <div class="planning-icon">🧳</div>
+                <div class="planning-text"><h5>Baggage Info</h5></div>
+                <div class="planning-arrow">→</div>
+            </a>
+
+            <!-- Classes -->
+            <a href="{% url 'classser' %}" class="planning-item">
+                <div class="planning-icon">💺</div>
+                <div class="planning-text"><h5>Classes & Services</h5></div>
+                <div class="planning-arrow">→</div>
+            </a>
+
+            <!-- Onboard -->
+            <a href="{% url 'onboard' %}" class="planning-item">
+                <div class="planning-icon">☕</div>
+                <div class="planning-text"><h5>Onboard Services</h5></div>
+                <div class="planning-arrow">→</div>
+            </a>
+        
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!-- ================= POPULAR ROUTES ================= -->
+
+    <div class="row3  popular-section">
+        <div class="col31  routes-header">
+            <h2 class="col31header  fw-bold">Popular Routes from Major Cities</h2>
+            <!-- <a href="#" class="view-routes fw-bold">View all routes →</a> -->
+        </div>
+        <div class="col32">
+             <!-- from bootstrap  -->
+            <div class="card3 card text-bg-dark">
+                <a href="{% url 'booking' %}?starting_station={{ mumbai.id }}&destination_station={{ new_delhi.id }}"
+                     class="train-card-link">
+                    <img src="{%static 'images/mumbai.jpg' %}" class="card-img" alt="Mumbai">
+                    <div class="card-img-overlay fw-bold">
+                        <h5 class="card-title">Mumbai CST → New Delhi</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="card3 card text-bg-dark">
+                <a href="{% url 'booking' %}?starting_station={{ bengaluru.id }}&destination_station={{ chennai.id }}"
+                    class="train-card-link">
+                    <img src="{%static 'images/bengaluru.jpg' %}" class="card-img" alt="Bengaluru">
+                    <div class="card-img-overlay fw-bold">
+                        <h5 class="card-title">Bengaluru → Chennai</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="card3 card text-bg-dark">
+                <a href="{% url 'booking' %}?starting_station={{ kolkata.id }}&destination_station={{ varanasi.id }}"
+                     class="train-card-link">
+                    <img src="{%static 'images/kolkata.jpg' %}" class="card-img" alt="Kolkata">
+                    <div class="card-img-overlay fw-bold">
+                        <h5 class="card-title">Kolkata → Varanasi</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="card3 card text-bg-dark">
+                <a href="{% url 'booking' %}?starting_station={{ hyderabad.id }}&destination_station={{ pune.id }}"
+                        class="train-card-link">
+                    <img src="{%static 'images/hyderabad.jpg' %}" class="card-img" alt="Hyderabad">
+                    <div class="card-img-overlay fw-bold">
+                        <h5 class="card-title">Hyderabad → Pune</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<!-- ================= FIND DESTINATIONS ================= -->
+
+    <div class="row4 destinations-section">
+        <div class="col41 text-center">
+            <h2>Find your next destination</h2>
+            <p>Looking for a place to go? We've got you covered with our travel tips.</p>
+        </div>
+        <div class="col42">
+            <!-- Kerala -->
+            <div class="col-md-6 col-lg-3">
+                <div class="destination-card card">
+                    <a href="{% url 'kerala' %}" class="train-card-link ">
+                        <img src="{% static 'images/kerala.jpg' %}" alt="Kerala">
+                        <div class="destination-content">
+                            <h4>Kerala</h4>
+                            <p>God's Own Country</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Rajasthan -->
+            <div class="col-md-6 col-lg-3">
+                <div class="destination-card card">
+                    <a href="{% url 'rajasthan' %}" class="train-card-link ">
+                        <img src="{% static 'images/rajasthan.jpg' %}" alt="Rajasthan">
+                        <div class="destination-content">
+                            <h4>Rajasthan</h4>
+                            <p>Land of Kings</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Goa -->
+            <div class="col-md-6 col-lg-3">
+                <div class="destination-card card">
+                    <a href="{% url 'goa' %}" class="train-card-link ">
+                        <img src="{% static 'images/goa.jpg' %}" alt="Goa">
+                        <div class="destination-content">
+                            <h4>Goa</h4>
+                            <p>Beaches & Adventures</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kashmir -->
+            <div class="col-md-6 col-lg-3">
+                <div class="destination-card card">
+                    <a href="{% url 'kashmir' %}" class="train-card-link ">
+                        <img src="{% static 'images/kashmir.jpg' %}" alt="Kashmir">
+                        <div class="destination-content">
+                            <h4>Kashmir</h4>
+                            <p>Paradise on Earth</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= PREMIUM TRAINS ================= -->
+    <div class="row5">
+        <div class="col51">
+            <div class="col51head">
+                <h2 class="train-content-text">Travel with Our Premium Trains</h2>
+                <p>Experience comfort, speed and convenience across India</p>
+            </div>
+            <!-- <a href="#" class="view-trains">View all trains →</a> -->
+        </div>
+        <div class="col52">
+            
+            <!-- Vande Bharat -->
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url 'home' %}" class="train-card-link">
+                    <div class="train-card card">
+                        <img src="{% static 'images/vande-bharat.jpg' %}" alt="Vande Bharat Express">
+                        <div class="train-content">
+                            <h6><span class="badge text-bg-primary">Premium</span></h6>
+                            <h4 class="train-content-text">Vande Bharat Express</h4>
+                            <p> India's semi-high-speed train offering  modern comfort and faster journeys.</p>                 
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- Rajdhani -->
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url 'home' %}" class="train-card-link">
+                    <div class="train-card card">
+                        <img src="{% static 'images/rajdhani.jpg' %}" alt="Rajdhani Express">
+                        <div class="train-content">
+                            <h6><span class="badge text-bg-primary">Premium</span></h6>
+                            <h4 class="train-content-text">Rajdhani Express</h4>
+                            <p>Fast and comfortable connections between major cities.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- Shatabdi -->
+            <div class="col-md-6 col-lg-4">
+                <a href="{% url 'home' %}" class="train-card-link">
+                    <div class="train-card card">
+                        <img src="{% static 'images/shatabdi.jpg' %}" alt="Shatabdi Express">
+                        <div class="train-content">
+                            <h6><span class="badge text-bg-primary">Premium</span></h6>
+                            <h4 class="train-content-text">Shatabdi Express</h4>
+                            <p>Comfortable daytime travel connecting important cities across India.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

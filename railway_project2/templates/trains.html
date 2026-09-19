@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/trains.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="trainsbody">
+        <div class="col1">
+            <div class="row11">
+                <h2>Trains</h2>
+                <p>Search trains,check status and view reservation charts.</p>
+            </div>
+            <div class="row12">
+                <div class="card row12card">
+                    <!-- from bootstrap -->
+                       <a href="{% url 'trains' %}" class="btn btn-outline-light active mb-2">
+                            🔍 Search Trains
+                        </a>
+
+                        <a href="{% url 'pnr' %}" class="btn btn-outline-light mb-2">
+                            🪪 PNR Status
+                        </a>
+<!-- 
+                        <a href="{% url 'reserv' %}" class="btn btn-outline-light mb-2">
+                            📃 Reservation Chart
+                        </a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col2">
+            <div class="card21 card">
+                <div class="cardhead">
+                    <h4>Search Trains</h4>
+                </div>
+                <form method="GET" action="{% url 'booking' %}">
+                    <div class="tofrom">
+                        <!-- from bootstrap -->
+                        <div class="from">
+                            <label for="starting_station">From</label>
+                            <select name="starting_station"id="starting_station" class="form-select">
+                                <option value="">📍 Source Station</option>
+                                {% for station in stations %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_code }} - {{ station.station_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="to">
+                            <label for="destination_station">To</label>
+                                <select name="destination_station"id="destination_station"class="form-select">
+                                    <option value="">📍 Destination Station</option>
+                                    {% for station in stations %}
+                                        <option value="{{ station.id }}">
+                                            {{ station.station_code }} - {{ station.station_name }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="jdateclass">
+                        <!-- from bootstrap -->
+                        <div class="jdate">
+                            <label for="">Journey Date</label>
+                            <input type="date" value="2025-05-22">
+                            
+                        </div>
+                        <div class="class">
+                            <label for="trainClass" class="form-label"> Class</label>
+                            <select class="form-select"id="trainClass" name="train_class">
+                                <option value="">Choose your class</option>
+                                {% for class_type in class_types %}
+                                    <option value="{{ class_type.id }}">
+                                        {{ class_type.class_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="searchbtn">
+                        <button class="btn  btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+                <div class="popsearch">
+                    <h5>Popular Searches</h5>
+                    <div class="popbtn">
+                        <div class="popbtn1">
+                            <button class="btn  btn-outline-primary" type="submit">Delhi to Mumbai</button>
+                            <button class="btn  btn-outline-primary" type="submit">Kolkata to Varanasi</button>
+                        </div>
+                        <br>
+                        <div class="popbtn2">
+                            <button class="btn  btn-outline-primary" type="submit">Chennai to Bengaluru</button>
+                            <button class="btn  btn-outline-primary" type="submit">Hyderabad to Pune</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{%endblock%}

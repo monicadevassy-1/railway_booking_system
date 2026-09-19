@@ -1,0 +1,288 @@
+/* =====================================================
+   AI CHAT PAGE
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   CHAT CONTAINER / BACKGROUND
+===================================================== */
+
+.chat-container {
+
+    width: 100%;
+    min-height: calc(100vh - 70px);
+
+    background-image:
+        linear-gradient(
+            rgba(0, 20, 10, 0.40),
+            rgba(0, 20, 10, 0.40)
+        ),
+        url("../images/helps.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px 20px;
+}
+
+
+/* =====================================================
+   SAME WIDTH FOR CHAT PARTS
+===================================================== */
+
+.chat-container > .chat-header,
+.chat-container > .chat-body,
+.chat-container > .chat-form,
+.chat-container > .back-button {
+
+    width: 450px;
+    max-width: 92%;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.chat-header {
+
+    background: rgb(0, 44, 18,.75);
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 15px 15px 0 0;
+}
+
+.chat-header h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+}
+
+.chat-header p {
+
+    margin: 6px 0 0;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TRANSPARENT CHAT BODY
+===================================================== */
+
+.chat-body {
+
+    height: 390px;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    /* TRANSPARENT */
+    background: rgba(255, 255, 255, 0.18);
+
+    /* Glass effect */
+    /* backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); */
+
+    border: none;
+    /* border-right: 1px solid rgba(255, 255, 255, 0.25); */
+}
+
+
+/* =====================================================
+   AI MESSAGE
+===================================================== */
+
+.ai-message {
+
+    max-width: 82%;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    padding: 13px 15px;
+
+    border-radius: 12px 12px 12px 3px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.12);
+
+    color: #333;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   USER MESSAGE
+===================================================== */
+
+.user-message {
+
+    max-width: 82%;
+
+    margin-left: auto;
+
+    margin-bottom: 15px;
+
+    background: #087f4f;
+
+    color: white;
+
+    padding: 12px 15px;
+
+    border-radius: 12px 12px 3px 12px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   QUESTION FORM
+===================================================== */
+
+.chat-form {
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    background: rgb(247, 243, 243,.2);
+
+    /* border-top: 1px solid #ddd; */
+}
+
+
+/* INPUT */
+
+.chat-form input {
+
+    flex: 1;
+
+    height: 45px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 22px;
+
+    padding: 12px 16px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.chat-form input:focus {
+
+    border-color: #075c3a;
+}
+
+
+/* =====================================================
+   SEND BUTTON
+===================================================== */
+
+.chat-form button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #075c3a;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.chat-form button:hover {
+
+    background: #06482e;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-button {
+
+    color: white;
+
+    background-color:rgb(1, 59, 34,.6);
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 12px;
+
+    border-radius: 0 0 15px 15px;
+}
+
+.back-button:hover {
+
+    background: #f1f5f3;
+
+    color: #06482e;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .chat-container {
+
+        min-height: calc(100vh - 60px);
+
+        padding: 20px 10px;
+    }
+
+    .chat-body {
+
+        height: 380px;
+    }
+}

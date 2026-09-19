@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/helps.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="helpsbody">
+        <!-- TOP ROW -->
+        <div class="row1">
+            <!-- HELP & SUPPORT -->
+            <div class="card11">
+                <h1 class="helphead fw-bold">Help & Support</h1>
+                <p> We are here to help you 24 x 7.</p>
+            </div>
+            <!-- FREQUENTLY ASKED -->
+            <div class="card12 card">
+                <h5> Frequently Asked</h5>
+                <br>
+                <div class="que">
+                    <ul class="que list-group list-group-flush">
+                        <!-- QUESTION 1 -->
+                        <li class="list-group-item">
+                            Can I cancel my Train ticket?
+                            <a href="{% url 'helpans' %}?question=Can I cancel my Train ticket?"class="faq-plus">→</a>
+                        </li>
+                        <!-- QUESTION 2 -->
+                        <li class="list-group-item">
+                            Do Children need ticket?
+                            <a href="{% url 'helpans' %}?question=Do Children need ticket?"  class="faq-plus">→</a>
+                        </li>
+                        <!-- QUESTION 3 -->
+                        <li class="list-group-item">
+                            What is the baggage allowance?
+                            <a href="{% url 'helpans' %}?question=What is the baggage allowance?" class="faq-plus">→</a>
+                        </li>
+                        <!-- QUESTION 4 -->
+                        <li class="list-group-item">
+                            Can I get a refund?
+                            <a href="{% url 'helpans' %}?question=Can I get a refund?" class="faq-plus">→</a>
+                        </li>
+                        <!-- QUESTION 5 -->
+                        <li class="list-group-item">
+                            Is food available on trains?
+                            <a href="{% url 'helpans' %}?question=Is food available on trains?" class="faq-plus">→</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- CONTACT US -->
+            <div class="card13 card">
+                <h5> Contact Us</h5>
+                <br>
+                <h6>📞 139</h6>
+                <p>(24 x 7 Customer Care)</p>
+                <h6> 📧 railwayprojectcc@gmail.com</h6>
+                <br>
+                <h6>✔️ Feedback & Complaints</h6>
+                <p>We value your Feedback</p>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="card21 card">
+                <div class="writing">
+                    <h5> Still need help? </h5>
+                    <p>Our Support team is always there to assist you.</p>
+                </div>
+                
+            <div class="live">
+                <a href="{% url 'chatstaff' %}" class="chat-staff-btn"> Chat with Staff</a>
+                <a href="{% url 'chatai' %}" class="live-chat-btn"> Live Chat</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

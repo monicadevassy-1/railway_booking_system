@@ -1,0 +1,1547 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.staffall {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f4f8f5;
+}
+
+
+.staffbottombar {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+}
+
+
+/* =========================================
+   LEFT SIDEBAR
+========================================= */
+
+.staffleft {
+    width: 18%;
+    min-height: 100vh;
+
+    background-color: #075c3a;
+
+    padding: 25px 20px;
+
+    color: white;
+}
+
+
+.staffsideup {
+    height: 100%;
+    min-height: 94vh;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.staff-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+
+    padding: 5px;
+}
+
+
+.staff-brand img {
+    object-fit: contain;
+}
+
+
+.staff-brand div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.staff-brand strong {
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+
+.staff-brand small {
+    font-size: 14px;
+
+    margin-top: 4px;
+
+    color: #c9eadb;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.staff-nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.staff-nav-item a,
+.staff-profile a {
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 10px;
+
+    border-radius: 8px;
+
+    color: #d7eee4;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+
+.staff-nav-item a:hover,
+.staff-profile a:hover {
+
+    color: white;
+
+    background-color: #0a7048;
+}
+
+
+.staff-nav-item.active a {
+
+    background-color: #21865d;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+.staff-icon {
+
+    width: 25px;
+
+    font-size: 21px;
+
+    text-align: center;
+}
+
+
+.staff-profile {
+
+    margin-top: auto;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.staffright {
+
+    width: 82%;
+
+    min-height: 100vh;
+
+    padding: 20px 25px;
+
+    background-color: #f7faf8;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.staff-header {
+
+    width: 100%;
+
+    min-height: 125px;
+
+    padding: 20px 25px;
+
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+
+    background-image:
+
+        linear-gradient(
+            rgba(211, 239, 224, 0.72),
+            rgba(218, 244, 231, 0.72)
+        ),
+
+        url("../images/adminpage.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.staff-header h1 {
+
+    color: #075c3a;
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+
+.staff-header-text {
+
+    text-align: right;
+
+    color: #164a37;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.staff-cards {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.staff-card {
+
+    flex: 1;
+
+    min-height: 105px;
+
+    padding: 18px;
+
+    background-color: white;
+
+    border: 1px solid #e0e8e3;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.staff-card-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    background-color: #d9f1e4;
+
+    color: #087443;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 26px;
+}
+
+
+.staff-card h2 {
+
+    color: #087443;
+
+    font-size: 28px;
+
+    margin-bottom: 2px;
+}
+
+
+.staff-card p {
+
+    color: #344d42;
+
+    font-size: 15px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   MESSAGES SECTION
+========================================= */
+
+.messages-section {
+
+    width: 100%;
+
+    background-color: white;
+
+    border: 1px solid #e0e8e3;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+
+
+.messages-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+
+.messages-header h2 {
+
+    color: #174d38;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   GMAIL STYLE MAIL LIST
+========================================= */
+
+.mail-list {
+
+    width: 100%;
+
+    border: 1px solid #e0e6e2;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background-color: white;
+}
+
+
+/* =========================================
+   MAIL ROW
+========================================= */
+
+.mail-row {
+
+    width: 100%;
+
+    min-height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 10px;
+
+    border-bottom: 1px solid #e5e9e7;
+
+    background-color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.mail-row:last-child {
+
+    border-bottom: none;
+}
+
+
+.mail-row:hover {
+
+    background-color: #f1f8f4;
+
+    box-shadow: inset 0 0 0 1px #d5e9de;
+}
+
+
+/* =========================================
+   UNREAD
+========================================= */
+
+.mail-row.unread {
+
+    background-color: #f8fcfa;
+}
+
+
+.mail-row.unread .mail-user,
+.mail-row.unread .mail-subject {
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.mail-checkbox {
+
+    width: 38px;
+
+    flex-shrink: 0;
+}
+
+
+.mail-checkbox input {
+
+    width: 17px;
+
+    height: 17px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   USER
+========================================= */
+
+.mail-user {
+
+    width: 170px;
+
+    flex-shrink: 0;
+
+    padding-right: 12px;
+
+    color: #202124;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   EMAIL
+========================================= */
+
+.mail-email {
+
+    width: 210px;
+
+    flex-shrink: 0;
+
+    padding-right: 12px;
+
+    color: #5f6368;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   MESSAGE CONTENT
+========================================= */
+
+.mail-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    overflow: hidden;
+}
+
+
+.mail-subject {
+
+    color: #202124;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.mail-preview {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.mail-status {
+
+    width: 75px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+}
+
+
+.status-new {
+
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background-color: #ffe2e2;
+
+    color: #dc2626;
+
+    font-weight: bold;
+
+    font-size: 10px;
+}
+
+
+.status-replied {
+
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background-color: #d9f5e4;
+
+    color: #087443;
+
+    font-weight: bold;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.mail-date {
+
+    width: 65px;
+
+    flex-shrink: 0;
+
+    color: #5f6368;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.mail-actions {
+
+    width: 145px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 3px;
+}
+
+
+.mail-action-btn {
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    color: #5f6368;
+
+    font-size: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.mail-action-btn:hover {
+
+    background-color: #dcefe5;
+
+    color: #075c3a;
+}
+
+
+.reply-btn:hover {
+
+    color: #087443;
+
+    background-color: #d9f5e4;
+}
+
+
+.delete-btn:hover {
+
+    color: #dc2626;
+
+    background-color: #fee2e2;
+}
+
+
+/* =========================================
+   NO MESSAGES
+========================================= */
+
+.no-messages {
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+
+.no-message-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.6;
+}
+
+
+.no-messages h3 {
+
+    color: #344d42;
+
+    margin-bottom: 6px;
+}
+
+
+.no-messages p {
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MESSAGE POPUP
+========================================= */
+
+.message-popup-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    z-index: 9999;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.message-popup {
+
+    width: 600px;
+
+    max-width: 90%;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    position: relative;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+.message-popup h2 {
+
+    color: #075c3a;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.message-close {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #666;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+.message-close:hover {
+
+    color: #dc2626;
+}
+
+
+/* =========================================
+   MESSAGE DETAILS
+========================================= */
+
+.message-detail {
+
+    margin-bottom: 18px;
+
+    color: #344d42;
+
+    font-size: 15px;
+}
+
+
+.message-detail strong {
+
+    display: block;
+
+    color: #075c3a;
+
+    margin-bottom: 5px;
+}
+
+
+.message-detail p {
+
+    padding: 14px;
+
+    background-color: #f5f8f6;
+
+    border-radius: 7px;
+
+    line-height: 1.6;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================
+   BOOKING POPUP
+========================================= */
+
+.booking-popup {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background-color: #edf8f2;
+
+    border-left: 4px solid #087443;
+
+    border-radius: 8px;
+}
+
+
+.booking-popup h3 {
+
+    color: #075c3a;
+
+    margin-bottom: 12px;
+}
+
+
+.booking-popup p {
+
+    margin-bottom: 7px;
+
+    color: #344d42;
+}
+
+
+/* =========================================
+   CLOSE MESSAGE
+========================================= */
+
+.close-message-btn {
+
+    margin-top: 20px;
+
+    padding: 9px 22px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #087443;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.close-message-btn:hover {
+
+    background-color: #075c3a;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.staff-footer {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 18px 10px;
+
+    background-color: #d8eee2;
+
+    color: #315e4b;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .staffleft {
+        width: 23%;
+    }
+
+    .staffright {
+        width: 77%;
+    }
+
+    .mail-email {
+        display: none;
+    }
+
+    .mail-user {
+        width: 150px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .staffbottombar {
+        flex-direction: column;
+    }
+
+    .staffleft {
+        width: 100%;
+        min-height: auto;
+        padding: 12px;
+    }
+
+    .staffsideup {
+        min-height: auto;
+    }
+
+    .staff-brand {
+        margin-bottom: 10px;
+    }
+
+    .staff-nav-item,
+    .staff-profile {
+        margin: 0;
+    }
+
+    .staff-nav-item a,
+    .staff-profile a {
+        padding: 9px;
+    }
+
+    .staff-profile {
+        margin-top: 10px;
+    }
+
+    .staffright {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .staff-header {
+        min-height: 100px;
+        padding: 15px;
+    }
+
+    .staff-header h1 {
+        font-size: 26px;
+    }
+
+    .staff-header-text {
+        display: none;
+    }
+
+    .staff-cards {
+        flex-direction: column;
+    }
+
+    .staff-card {
+        width: 100%;
+    }
+
+    .mail-row {
+        min-height: 70px;
+        padding: 6px;
+    }
+
+    .mail-checkbox {
+        width: 30px;
+    }
+
+    .mail-user {
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .mail-preview {
+        display: none;
+    }
+
+    .mail-status {
+        display: none;
+    }
+
+    .mail-date {
+        width: 50px;
+        font-size: 10px;
+    }
+
+    .mail-actions {
+        width: 75px;
+    }
+
+    .mail-action-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+    }
+
+    .message-popup {
+        width: 94%;
+        padding: 22px;
+    }
+
+    .staff-footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   REPLY POPUP
+========================================= */
+
+.reply-popup-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    z-index: 10000;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.reply-popup {
+
+    width: 550px;
+
+    max-width: 90%;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    position: relative;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+.reply-popup h2 {
+
+    color: #075c3a;
+
+    margin-bottom: 22px;
+
+    font-size: 25px;
+}
+
+
+.reply-close {
+
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    color: #666;
+
+    cursor: pointer;
+}
+
+
+.reply-close:hover {
+
+    color: #dc2626;
+}
+
+
+.reply-user,
+.reply-subject {
+
+    margin-bottom: 14px;
+
+    color: #344d42;
+
+    font-size: 14px;
+}
+
+
+.reply-user strong,
+.reply-subject strong {
+
+    color: #075c3a;
+
+    margin-right: 8px;
+}
+
+
+#staff_reply {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 12px;
+
+    border: 1px solid #cbd9d1;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    resize: vertical;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+
+#staff_reply:focus {
+
+    border-color: #087443;
+
+    box-shadow: 0 0 0 2px rgba(8, 116, 67, 0.1);
+}
+
+
+.reply-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.reply-cancel-btn {
+
+    padding: 9px 18px;
+
+    border: 1px solid #cbd9d1;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #344d42;
+
+    cursor: pointer;
+}
+
+
+.reply-send-btn {
+
+    padding: 9px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #087443;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.reply-send-btn:hover {
+
+    background-color: #075c3a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/* MESSAGE DETAILS */
+/* ============================= */
+
+.message-details {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+.message-details h3 {
+    color: #075e42;
+    margin-bottom: 15px;
+}
+
+
+.message-details p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+
+.message-details strong {
+    color: #222222;
+}
+
+
+/* ============================= */
+/* BOOKING DETAILS */
+/* ============================= */
+
+.booking-details {
+    background-color: #f5f8f7;
+    border: 1px solid #d8e2de;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+.booking-details h4 {
+    color: #075e42;
+    margin-bottom: 12px;
+}
+
+
+.booking-details p {
+    margin: 7px 0;
+}
+
+
+/* ============================= */
+/* REPLY SECTION */
+/* ============================= */
+
+.reply-section {
+    background-color: #f8f8f8;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+
+.reply-section h4 {
+    color: #075e42;
+    margin-bottom: 12px;
+}
+
+
+.reply-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+.reply-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+.reply-section textarea:focus {
+    outline: none;
+    border: 1px solid #075e42;
+}
+
+
+/* ============================= */
+/* SEND REPLY BUTTON */
+/* ============================= */
+
+.reply-section button {
+    background-color: #075e42;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.reply-section button:hover {
+    background-color: #064d37;
+}
+
+
+/* ============================= */
+/* DELETE BUTTON */
+/* ============================= */
+
+.message-details > form button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.message-details > form button:hover {
+    background-color: #bb2d3b;
+}
+
+
+/* ============================= */
+/* MESSAGE ROW */
+/* ============================= */
+
+.mail-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #dddddd;
+    background-color: white;
+}
+
+
+.mail-row:hover {
+    background-color: #f8f8f8;
+}
+
+
+.mail-user {
+    width: 150px;
+    font-weight: bold;
+}
+
+
+.mail-email {
+    width: 220px;
+}
+
+
+.mail-content {
+    flex: 1;
+}
+
+
+.mail-subject {
+    font-weight: bold;
+}
+
+
+.mail-preview {
+    color: #555555;
+}
+
+
+.mail-status {
+    width: 80px;
+}
+
+
+.mail-date {
+    width: 80px;
+}
+
+
+/* ============================= */
+/* STATUS */
+/* ============================= */
+
+.status-new {
+    background-color: #075e42;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+
+.status-replied {
+    background-color: #dddddd;
+    color: #333333;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+
+/* ============================= */
+/* NO MESSAGES */
+/* ============================= */
+
+.no-messages {
+    text-align: center;
+    padding: 50px;
+}
+
+
+.no-message-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+.no-messages h3 {
+    color: #075e42;
+}

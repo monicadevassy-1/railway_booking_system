@@ -1,0 +1,111 @@
+<div class="modal fade" id="editTrain{{ i.id }}" >
+    <div class="modal-dialog">
+        <div class="modal-content add-train-modal">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Train</h5>
+                <button type="button"class="btn-close"data-bs-dismiss="modal"> </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="action" value="edit">
+                    <input type="hidden" name="train_id" value="{{ i.id }}">
+
+                    <!-- TRAIN NAME -->
+                    <div class="mb-3">
+                        <label class="form-label">Train Name</label>
+                        <input type="text"name="train_name"class="form-control"value="{{ i.train_name }}"required>
+                    </div>
+
+                    <!-- TRAIN NUMBER -->
+                    <div class="mb-3">
+                        <label class="form-label">Train Number</label>
+                        <input type="number"name="train_number" class="form-control"value="{{ i.train_number }}" required>
+                    </div>
+
+                    <!-- SOURCE -->
+                    <div class="mb-3">
+                        <label class="form-label">Source</label>
+                        <select name="source" class="form-control"required>
+                            {% for station in stations %}
+                                {% if station.id == i.source.id %}
+                                    <option value="{{ station.id }}" selected>
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% else %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% endif %}>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- DESTINATION -->
+                    <div class="mb-3">
+                        <label class="form-label">Destination</label>
+                        <select name="destination" class="form-control"  required>          
+                            {% for station in stations %}
+                                {% if station.id == i.destination.id %}
+                                    <option value="{{ station.id }}" selected>
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% else %}
+                                    <option value="{{ station.id }}">
+                                        {{ station.station_name }}
+                                        ({{ station.station_code }})
+                                    </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- DEPARTURE -->
+                    <div class="mb-3">
+                        <label class="form-label">Departure</label>
+                        <input type="time"name="departure"class="form-control"  value="{{ i.departure}}" required>
+                    </div>
+                    <!-- ARRIVAL -->
+                    <div class="mb-3">
+                        <label class="form-label">Arrival</label>
+                        <input type="time"name="arrival"class="form-control"value="{{ i.arrival}}"  required>
+                    </div>
+                    <!-- JOURNEY DAYS -->
+                    <div class="mb-3">
+                        <label class="form-label">Journey Days</label>
+                        <input type="number" name="journey_days" class="form-control" min="1"  value="{{ i.journey_days }}"required>
+                    </div>
+                    <!-- CLASSES -->
+                    <div class="mb-3">
+                        <label class="form-label">Classes</label>
+                        <input type="text" name="classes"class="form-control"value="{{ i.classes }}" required>
+                    </div>
+                    <!-- STATUS -->
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>                        
+                        {% if i.status == "Active" %}
+                            <select name="status" class="form-control" required>
+                                <option value="Active" selected>Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        {% else %}
+                            <select name="status" class="form-control" required>
+                                <option value="Active">Active</option>
+                                <option value="Inactive" selected>Inactive</option>
+                            </select>
+                        {% endif %}
+                    </div>
+                    <!-- BUTTONS -->
+                    <div class="modal-buttons">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                        <button type="submit"class="btn btn-primary"> Update Train</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

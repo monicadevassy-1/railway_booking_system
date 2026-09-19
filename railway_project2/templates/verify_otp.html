@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/verify_otp.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="loginbody">
+    <div class="container maincard card">
+        <h2>Verify Email</h2>
+        <br>
+        <p>Enter the OTP sent to your email id: </p>
+        <p> {{email}}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="otp" maxlength="6" placeholder="Enter OTP">
+            <button type="submit" class="btn btn-primary">Verify OTP</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

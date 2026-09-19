@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/mybookings.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="mybookings-body">
+
+    <h1 class="bookings-title">
+        My Bookings
+    </h1>
+
+
+    {% if bookings %}
+
+        {% for booking in bookings %}
+
+
+            <!-- CANCELLED BOOKING -->
+
+            {% if booking.booking_status == "Cancelled" %}
+
+                <div class="booking-card cancelled-card">
+
+
+                    <!-- TRAIN NAME -->
+
+                    <div class="train-title">
+
+                        {{ booking.train.train_number }}
+                        -
+                        {{ booking.train.train_name }}
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <!-- ROUTE -->
+
+                    <div class="route">
+
+                        <div>
+                            {{ booking.starting_station.station_name }}
+                        </div>
+
+                        <div class="arrow">
+                            →
+                        </div>
+
+                        <div>
+                            {{ booking.destination_station.station_name }}
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOOKING DETAILS -->
+
+                    <div class="booking-details">
+
+                        <p>
+                            <strong>PNR Number:</strong>
+                            {{ booking.pnr }}
+                        </p>
+
+                        <p>
+                            <strong>Journey Date:</strong>
+                            {{ booking.journey_date }}
+                        </p>
+
+                        <p>
+                            <strong>Class:</strong>
+                            {{ booking.train_class.class_type.class_name }}
+                        </p>
+
+                        <p>
+                            <strong>Passengers:</strong>
+                            {{ booking.passengers }}
+                        </p>
+
+                        <p>
+                            <strong>Total Amount:</strong>
+                            ₹{{ booking.total_amount }}
+                        </p>
+
+                        <p>
+
+                            <strong>
+                                Status:
+                            </strong>
+
+                            <span class="status cancelled-status">
+                                CANCELLED
+                            </span>
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- CANCELLED MESSAGE -->
+
+                    <div class="cancelled-ticket">
+
+                        ✕ Ticket Cancelled
+
+                    </div>
+
+
+                </div>
+
+
+            {% else %}
+
+
+                <!-- ACTIVE BOOKING -->
+
+                <div class="booking-card">
+
+
+                    <!-- TRAIN NAME -->
+
+                    <div class="train-title">
+
+                        {{ booking.train.train_number }}
+                        -
+                        {{ booking.train.train_name }}
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <!-- ROUTE -->
+
+                    <div class="route">
+
+                        <div>
+                            {{ booking.starting_station.station_name }}
+                        </div>
+
+                        <div class="arrow">
+                            →
+                        </div>
+
+                        <div>
+                            {{ booking.destination_station.station_name }}
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOOKING DETAILS -->
+
+                    <div class="booking-details">
+
+                        <p>
+                            <strong>PNR Number:</strong>
+                            {{ booking.pnr }}
+                        </p>
+
+                        <p>
+                            <strong>Journey Date:</strong>
+                            {{ booking.journey_date }}
+                        </p>
+
+                        <p>
+                            <strong>Class:</strong>
+                            {{ booking.train_class.class_type.class_name }}
+                        </p>
+
+                        <p>
+                            <strong>Passengers:</strong>
+                            {{ booking.passengers }}
+                        </p>
+
+                        <p>
+                            <strong>Total Amount:</strong>
+                            ₹{{ booking.total_amount }}
+                        </p>
+
+                        <p>
+
+                            <strong>
+                                Status:
+                            </strong>
+
+                            <span class="status confirmed-status">
+
+                                {{ booking.booking_status }}
+
+                            </span>
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- CANCEL BUTTON -->
+
+                    <div class="booking-buttons">
+
+                        <form method="POST"
+                              action="{% url 'cancelbooking' booking.id %}">
+
+                            {% csrf_token %}
+
+                            <button type="submit"
+                                    class="cancel-btn">
+
+                                Cancel Ticket
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                </div>
+
+
+            {% endif %}
+
+
+        {% endfor %}
+
+
+    {% else %}
+
+
+        <!-- NO BOOKINGS -->
+
+        <div class="no-bookings">
+
+            <h4>
+                No Bookings Found
+            </h4>
+
+            <p>
+                You don't have any bookings yet.
+            </p>
+
+        </div>
+
+
+    {% endif %}
+
+
+</div>
+
+{% endblock %}

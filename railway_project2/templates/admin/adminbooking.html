@@ -1,0 +1,208 @@
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/adminbooking.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+    <div class="adminall">    
+        <div class="bottombar">
+            <div class="bottomleft">
+                <ul class="nav sideup flex-column">
+                    <li class="nav-item railway-brand">
+                        <img src="{% static 'images/railway_logo.png' %}" alt="Indian Railways"  width="30" height="30">
+                        <span>INDIAN RAILWAYS</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'admindash' %}">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'admintrains' %}">Trains</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'adminstation' %}">Stations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="{% url 'adminbooking' %}">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admincancellations' %}">Cancellations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adminuser' %}">Users</a>
+                    </li>
+                    
+                    <li class="admin-profile ">
+                        <a class="nav-link" href="{% url 'adminprofile' %}">Admin Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+
+
+
+            <div class="bottomright">
+                <div class="part1">
+                    <h2>Booking  Management</h2>                    
+                    <nav aria-label="breadcrumb" >
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'admindash' %}">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Booking</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="part4">
+                    <div class="part4top">
+                        <h4>Bookings</h4>
+                    </div>
+                    <div class="part4body">
+                        <table class="table table-hover">
+                            <thead class="theader">
+                                <tr>
+                                <!-- <th scope="col">Train No.</th> -->
+                                <th scope="col">PNR No.</th>
+                                <th scope="col">Train No./Name</th>
+                                <th scope="col">From</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Journey Date</th>
+                                <th scope="col">Passengers</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for booking in bookings %}
+                                    <tr>
+                                        <td>{{ booking.pnr }}</td>
+                                        <td>{{ booking.train.train_number }}/{{ booking.train.train_name }}</td>
+                                        <td>{{ booking.starting_station.station_name }}</td>
+                                        <td>{{ booking.destination_station.station_name }}</td>
+                                        <td>{{ booking.journey_date }}</td>
+                                        <td>{{ booking.passengers }}</td>
+                                        <td>₹{{ booking.total_amount }}</td>
+                                        <td>{{ booking.booking_status }}</td>
+                                        <td>
+                                            <div class="actionrow">
+                                                {% load static %}
+                                                <button type="button"class="action-icon" data-bs-toggle="modal" data-bs-target="#editBooking{{ booking.id }}" title="Edit Booking">
+                                                    <img src="{% static 'images/edit.png' %}" alt="Edit">
+                                                </button>
+                                                <form method="POST" style="display:inline;">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="action" value="delete">
+                                                    <input type="hidden" name="booking_id" value="{{ booking.id }}">
+                                                    <button type="submit" class="action-icon" onclick="return confirm('Are you sure you want to delete this booking?');"title="Delete Booking">
+                                                        <img src="{% static 'images/delete.jpg' %}" alt="Delete">
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% empty %}
+                                    <tr>
+                                        <td colspan="9">No bookings found </td>
+                                    </tr>
+                                    {% endfor %}
+                            </tbody>
+                        </table>
+
+                        {% for booking in bookings %}
+                            <div class="modal fade" id="editBooking{{ booking.id }}" tabindex="-1">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title"> Edit Booking</h5>
+                                            <button type="button"class="btn-close"] data-bs-dismiss="modal"></button>
+                                        </div>
+
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                            <div class="modal-body">
+                                                <input type="hidden"name="action" value="edit">
+                                                <input type="hidden" name="booking_id" value="{{ booking.id }}">
+
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">PNR No. </label>
+                                                        <input type="text"name="pnr"class="form-control" value="{{ booking.pnr }}">
+                                                    </div>
+
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">  Train </label>
+                                                        <input type="text" class="form-control"value="{{ booking.train.train_number }} / {{ booking.train.train_name }}"readonly>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label"> From</label>
+                                                        <input type="text"class="form-control" value="{{ booking.starting_station.station_name }}"readonly>
+                                                    </div>
+
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label"> To </label>
+                                                        <input type="text"class="form-control"value="{{ booking.destination_station.station_name }}"readonly>
+                                                    </div>
+
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Journey Date</label>
+                                                        <input type="date"name="journey_date" class="form-control"  value="{{ booking.journey_date|date:'Y-m-d' }}">
+                                                    </div>
+
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Passengers</label>
+                                                        <input type="number" name="passengers" class="form-control" value="{{ booking.passengers }}"min="1">
+                                                    </div>
+
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Amount</label>
+                                                        <input type="number"class="form-control"   value="₹{{ booking.total_amount }}"readonly>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label class="form-label">Status</label>
+                                                        {% if booking.booking_status == "Pending" %}
+                                                            <select name="booking_status" class="form-select">
+                                                                <option value="Pending" selected> Pending</option>
+                                                                <option value="Confirmed">Confirmed</option>
+                                                                <option value="Cancelled">Cancelled</option>
+                                                            </select>
+
+                                                        {% elif booking.booking_status == "Confirmed" %}
+                                                            <select name="booking_status" class="form-select">
+                                                                <option value="Pending"> Pending</option>
+                                                                <option value="Confirmed" selected>Confirmed </option>
+                                                                <option value="Cancelled"> Cancelled</option>
+                                                            </select>
+                                                        {% else %}
+                                                            <select name="booking_status" class="form-select">
+                                                                <option value="Pending">Pending </option>
+                                                                <option value="Confirmed"> Confirmed</option>
+                                                                <option value="Cancelled" selected>Cancelled</option>
+                                                            </select>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">Cancel </button>
+                                                <button type="submit"class="btn btn-primary">Update Booking</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}

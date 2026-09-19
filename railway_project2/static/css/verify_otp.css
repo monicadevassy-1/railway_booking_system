@@ -1,0 +1,20 @@
+.loginbody{
+    margin:0;
+    width: 100%;
+    min-height: 650px;
+    background-image: url("../images/login.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;}
+
+.maincard{
+    width:auto;
+    margin-top: 10%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20%;}
+.maincard h2{font-weight: bold;}
+
+

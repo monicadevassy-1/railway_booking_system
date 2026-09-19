@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/onboard.css' %}">
+{% endblock %}
+{% block content %}
+  
+<div class="bagbody">
+    <div class="bagtop">
+        <h2>Onboard Services</h2>
+        <!-- from bootstrap -->
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Onboard Services</li>
+            </ol>
+        </nav>
+
+    </div>
+    <div class="bagbottom">        
+        <div class="line1">
+            <div class="card1 card">
+                <div class="cardtop">
+                    <img src=" {% static 'images/ecatering.png' %}" class="card-img-top" alt="...">
+                    <h3>E-Catering</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Order food from a wide range of FSSAI-approved restaurants across India delivered right to your seat.</p>
+                </div>
+            </div>
+            <div class="card2 card"> 
+                <div class="cardtop">
+                    <img src=" {% static 'images/pantrycar.png' %}" class="card-img-top" alt="...">
+                    <h3>Pantry Car</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Attached in long distance trains offering variety of meals,snacks,beverages,packed drinking water</p>
+                </div>
+            </div>
+            <div class="card3 card">
+                <div class="cardtop">
+                    <img src=" {% static 'images/bedding.png' %}" class="card-img-top" alt="...">
+                    <h3>Bedding</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Clean bedroll(sheets and pillow cover) provided in AC coaches.Linen is hygienicaly laundered</p>
+                </div>
+            </div>
+            <div class="card4 card">
+                <div class="cardtop">
+                    <img src=" {% static 'images/water.png' %}" class="card-img-top" alt="...">
+                    <h3>Water</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Packaged drinking water available in coaches.You buy it from pantry-car or on-board staffs.</p>
+                </div>
+            </div>
+            <div class="card5 card"> 
+                <div class="cardtop">
+                    <img src=" {% static 'images/divya.png' %}" class="card-img-top" alt="...">
+                    <h3>Disability</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Coaches with ramp facility,wide doors,accessible toilets are available in most of the trains.</p>
+                </div>
+            </div>
+        </div>
+        <div class="line2">
+            <div class="card6 card"> 
+                <div class="cardtop">
+                    <img src=" {% static 'images/charge.png' %}" class="card-img-top" alt="...">
+                    <h3>Charging</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Charging Ports are available in almost all coaches,to keep your mobile and other devices charged</p>
+                </div>
+             </div>
+            <div class="card7 card"> 
+                <div class="cardtop">
+                    <img src=" {% static 'images/rpf.png' %}" class="card-img-top" alt="...">
+                    <h3>RPF</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>CCTV cameras are installed in stations and in certain coaches.RPF perssonel ensure your safety and security.</p>
+                </div>
+             </div>
+            <div class="card8 card">
+               <div class="cardtop">
+                    <img src=" {% static 'images/aid.png' %}" class="card-img-top" alt="...">
+                    <h3>First Aid</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Basic aid is available with on-board staff,For serious medical emergency contact TTE/RPF.</p>
+                </div>
+              </div>
+            <div class="card9 card">
+                <div class="cardtop">
+                    <img src=" {% static 'images/clean.png' %}" class="card-img-top" alt="...">
+                    <h3>Cleaning</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Ensures clean coaches and toilets.Bio-toilets are fitted to ensure hygiene.</p>
+                </div>
+            </div>
+            <div class="card10 card"> 
+                <div class="cardtop">
+                    <img src=" {% static 'images/tte.png' %}" class="card-img-top" alt="...">
+                    <h3>T T E</h3>
+                </div>
+                <div class="cardbottom">
+                    <p>Available in Almost All coaches,to assist passengers during emergency</p>
+                </div>
+              </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+{%endblock%}

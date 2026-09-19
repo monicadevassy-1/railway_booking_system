@@ -1,0 +1,21 @@
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}&train_number={{ train_number }}&source={{ source }}&destination={{ destination }}">
+            Previous
+        </a>
+    {% endif %}
+
+    {% for page in page_obj.paginator.page_range %}
+        <a href="?page={{ page }}&train_number={{ train_number }}&source={{ source }}&destination={{ destination }}"
+        {% if page_obj.number == page %}class="active"{% endif %}>
+            {{ page }}
+        </a>
+    {% endfor %}
+
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}&train_number={{ train_number }}&source={{ source }}&destination={{ destination }}">
+            Next
+        </a>
+    {% endif %}
+</div>

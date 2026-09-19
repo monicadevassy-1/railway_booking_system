@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/reserv.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="resbody">
+        <div class="col1">
+            <div class="row11">
+                <h2>Reservation Chart</h2>
+                <p>View the reservation chart and check the availability.</p>
+            </div>
+            <div class="row12">
+                <div class="card row12card">
+                    <!-- from bootstrap -->
+                        <a href="{% url 'trains' %}" class="btn btn-outline-light mb-2">🔍 Search Trains</a>
+
+                        <a href="{% url 'pnr' %}" class="btn btn-outline-light mb-2">🪪 PNR Status</a>
+
+                        <a href="{% url 'reserv' %}" class="btn btn-outline-light mb-2  active">📃 Reservation Chart </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col2">
+            <div class="card21 card">
+                <div class="cardhead">
+                    <h4>Reservation Chart</h4>
+                </div>
+               <div class="tofrom">
+                    <!-- from bootstrap -->
+                    <div class="from">
+                        <label for="Sourcestation" class="from">Train Number</label>
+                        <input class="form-control"   placeholder="Enter Train Number">
+                    </div>
+                    <div class="jdate">
+                        <label for="">Date Of Birth</label>
+                        <input type="date"> 
+                    </div>
+                </div>
+                <br>
+                <div class="jdateclass">
+                    <!-- from bootstrap -->
+                    <div class="board">
+                        <label for="DestinationStation" class="board">Boarding Station</label>
+                        <input class="form-control"   placeholder="Enter Station">
+                    </div>
+                    <div class="class">
+                        <label for="class" class="form-label">Class</label>
+                        <select class="form-select" id="trainClass" name="train_class">
+                            <option selected disabled>Choose your class</option>
+                            <option value="1A">First AC (1A)</option>
+                            <option value="2A">AC 2-Tier (2A)</option>
+                            <option value="3A">AC 3-Tier (3A)</option>
+                            <option value="3E">AC 3-Tier Economy (3E)</option>
+                            <option value="SL">Sleeper Class (SL)</option>
+                            <option value="CC">AC Chair Car (CC)</option>
+                            <option value="EC">Executive Chair Car (EC)</option>
+                            <option value="2S">Second Sitting (2S)</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="searchbtn">
+                    <button class="btn  btn-primary" type="submit">Search</button>
+                </div>
+                <br>
+
+
+                <div class="pnrinfo">
+                    <h5>PNR Information</h5>
+                    <div class="pnrdetail card">
+                        <h6>Enter the train details above to view the reservation chart and passenger availability. </h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{%endblock%}

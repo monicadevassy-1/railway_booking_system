@@ -1,0 +1,75 @@
+<div class="modal fade" id="editBooking{{ booking.id }}" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Edit Booking</h5>
+                <button type="button"class="btn-close"data-bs-dismiss="modal"></button>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <input type="hidden"name="action"value="edit">
+                    <input type="hidden"name="booking_id"value="{{ booking.id }}">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">  PNR No. </label>
+                            <input type="text"name="pnr" class="form-control" value="{{ booking.pnr }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Train</label>
+                            <input type="text" class="form-control"value="{{ booking.train.train_number }} / {{ booking.train.train_name }}" readonly>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">From</label>
+                            <input type="text"class="form-control"value="{{ booking.starting_station.station_name }}"readonly>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">To</label>
+                            <input type="text" class="form-control" value="{{ booking.destination_station.station_name }}"readonly>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label"> Journey Date </label>
+                            <input type="date"name="journey_date" class="form-control" value="{{ booking.journey_date|date:'Y-m-d' }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Passengers </label>
+                            <input type="number" name="passengers" class="form-control"value="{{ booking.passengers }}" min="1">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Amount</label>
+                            <input type="number" name="total_amount"class="form-control"value="{{ booking.total_amount }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Status </label>
+                            {% if booking.booking_status == "Pending" %}
+                                <select name="booking_status" class="form-select">
+                                    <option value="Pending" selected>Pending</option>
+                                    <option value="Confirmed"> Confirmed </option>
+                                    <option value="Cancelled">Cancelled</option>
+                                </select>
+                            {% elif booking.booking_status == "Confirmed" %}
+                                <select name="booking_status" class="form-select">
+                                    <option value="Pending">Pending </option>
+                                    <option value="Confirmed" selected>Confirmed</option>
+                                    <option value="Cancelled">Cancelled</option>
+                                </select>
+                            {% else %}
+                                <select name="booking_status" class="form-select">
+                                    <option value="Pending">Pending </option>
+                                    <option value="Confirmed">Confirmed</option>
+                                    <option value="Cancelled" selected> Cancelled</option>
+                                </select>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button"class="btn btn-secondary"data-bs-dismiss="modal"> Cancel </button>
+                    <button type="submit"class="btn btn-primary">Update Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

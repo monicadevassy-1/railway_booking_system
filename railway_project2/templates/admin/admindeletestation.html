@@ -1,0 +1,21 @@
+<div class="modal fade" id="deleteStation{{ i.id }}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Station</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete<strong>{{ i.station_name }}</strong>?</p>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="delete">
+                    <input type="hidden"  name="station_id" value="{{ i.id }}">
+                    <button type="button"class="btn btn-secondary"data-bs-dismiss="modal">No</button>
+                    <button type="submit"class="btn btn-danger"> Yes, Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

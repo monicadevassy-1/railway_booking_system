@@ -1,0 +1,42 @@
+<div class="modal fade" id="addStationModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content add-station-modal">
+            
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Station</h5>
+                <button type="button"class="btn-close"data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="add">
+                    <div class="mb-3">
+                        <label class="form-label"> Station Name</label>
+                        <input type="text" name="station_name" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Station Code</label>
+                        <input type="text"name="station_code"class="form-control"required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"> City</label>
+                        <input type="text"name="city"class="form-control"required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">State</label>
+                        <input type="text" name="state" class="form-control"required>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <button type="button"class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit"class="btn btn-primary">Add Station </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

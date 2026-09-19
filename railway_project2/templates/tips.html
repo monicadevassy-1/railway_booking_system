@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/tips.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="tipsbody">
+        <div class="part1"></div>
+        <div class="mainpart">
+            <div class="tipshead">
+                <h2>Travel Tips</h2>
+                <p>Smart tips for safe,comfortable and happy journey</p>
+            </div>
+            <div class="tipscards">
+                <div class="line1">
+                    <div class="card1 card pin">
+                        <div class="cardhead">
+                            <h5>1. Before You Travel</h5>
+                        </div>
+                        <div class="cardbody">
+                            <ul class="text-pnr">
+                                <li>Book you ticket in advance</li>
+                                <li>Check your PNR nad Status</li>
+                                <li>Carry a Valid ID proof</li>
+                                <li>Arrive at te station early</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card2 card pin">
+                        <div class="cardhead">
+                            <h5>2. At the Railway Station</h5>
+                        </div>
+                        <div class="cardbody">
+                           <ul class="text-pnr">
+                                <li>Check the platform number</li>
+                                <li>Confirm the train and coach</li>
+                                <li>Locate the coach position</li>
+                                <li>Keep the ticket and ID easily accessible</li>
+                            </ul>
+                        </div>   
+                    </div>
+                    <div class="card3 card pin">
+                        <div class="cardhead">
+                            <h5>3. Packing Tips</h5>
+                        </div>
+                        <div class="cardbody">
+                           <ul class="text-pnr">
+                                <li>Keep your luggage within the permitted limit</li>
+                                <li>Carry essential medicines and personal items</li>
+                                <li>Label your luggage with contact details</li>
+                                <li>Keep your valuables in hand luggage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="line2">
+
+                    <div class="card4 card pin ">
+                        <div class="cardhead">
+                            <h5>4. Safety Tips</h5>
+                        </div>
+                        <div class="cardbody">
+                           <ul class="text-pnr">
+                                <li>Dont leave valuables unattended</li>
+                                <li>Avoid accepting food or drinks from strangers</li>
+                                <li>Keep belongings secured while sleeping</li>
+                                <li>Be careful when boarding and getting of the train</li>
+                            </ul>
+                        </div> 
+                    </div>
+                    <div class="card5 card pin">
+                        <div class="cardhead">
+                            <h5>5. Overnight Journey</h5>
+                        </div>
+                        <div class="cardbody">
+                           <ul class="text-pnr">
+                                <li>Carry a small travel pillow/blanket if needed</li>
+                                <li>Keep your phone  and vallet secured</li>
+                                <li>Set an alarm before destination</li>
+                                <li>Lock the luggage</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card6 card pin">
+                        <div class="cardhead">
+                            <h5>6. Travel Responsibly</h5>
+                        </div>
+                        <div class="cardbody">
+                           <ul class="text-pnr">
+                                <li>Dont litter the train/station,Use dust bins </li>
+                                <li>Keep noise levels low</li>
+                                <li>Respect fellow passengers</li>
+                                <li>Dont pull the chain unnecessarily</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="part3"></div>
+
+
+    </div>
+
+{%endblock%}

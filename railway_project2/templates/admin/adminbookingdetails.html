@@ -1,0 +1,119 @@
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/adminbooking.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+    <div class="adminall">    
+        <div class="bottombar">
+            <div class="bottomleft">
+                <ul class="nav sideup flex-column">
+                    <li class="nav-item railway-brand">
+                        <img src="{% static 'images/railway_logo.png' %}" alt="Indian Railways"  width="30" height="30">
+                        <span>INDIAN RAILWAYS</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'admindash' %}">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'admintrains' %}">Trains</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'adminstation' %}">Stations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="{% url 'adminbooking' %}">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admincancellations' %}">Cancellations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adminuser' %}">Users</a>
+                    </li>
+                    
+                    <li class="admin-profile ">
+                        <a class="nav-link" href="{% url 'adminprofile' %}">Admin Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+
+
+
+            <div class="bottomright">
+                <div class="part1">
+                    <h2>Booking  Management</h2>                    
+                    <nav aria-label="breadcrumb" >
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'admindash' %}">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">
+                                <a href="{% url 'adminbooking' %}">Booking</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Booking Details
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="part4">
+                    <div class="part4top">
+                        <h4>Booking Details</h4>
+                    </div>
+                    <div class="part4body">
+                        <table class="table table-hover">
+                            <thead class="theader">
+                                <tr>
+                                    <th>Passenger</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Class</th>
+                                    <th>Seat No.</th>
+                                    <th>Fare</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for bp in passengers %}
+                                <tr>
+                                    <td>{{ bp.passenger.name }}</td>
+                                    <td>{{ bp.passenger.age }}</td>
+                                    <td>{{ bp.passenger.gender }}</td>
+                                    <td>{{ bp.train_class.class_name }}</td>
+                                    <td>{{ bp.seat_number }}</td>
+                                    <td>₹{{ bp.fare }}
+                                    </td>
+
+                                </tr>
+
+                                {% empty %}
+
+                                <tr>
+                                    <td colspan="6" class="text-center">
+                                        No passenger details found
+                                    </td>
+                                </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

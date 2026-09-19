@@ -1,0 +1,275 @@
+.pnrbody {
+    display: flex;
+    width: 100%;
+    min-height: 600px;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 20, 60, 0.45),
+            rgba(0, 45, 90, 0.45)
+        ),
+        url("../images/trains.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 50px 5%;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.col1 {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.row11 h2 {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.row11 p {
+    color: white;
+    font-size: 17px;
+}
+
+
+/* Navigation buttons */
+
+.row12 {
+    width: 75%;
+    padding-left: 8%;
+    padding-top: 30px;
+}
+
+.row12card {
+    background-color: transparent;
+    border: none;
+}
+
+.row12card .btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.col2 {
+    width: 60%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.card21 {
+    width: 100%;
+    max-width: 800px;
+
+    padding: 35px 40px;
+
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.cardhead {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.card21 h4,
+.card21 h5 {
+    color: #290575;
+    font-weight: bold;
+}
+
+
+/* =========================
+   PNR INPUT
+========================= */
+
+.pnrnumber {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pnrnumb {
+    width: 100%;
+}
+
+.pnrnum {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.pnrbtn {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.pnrbtn .btn {
+    width: 100%;
+}
+
+
+/* =========================
+   PNR INFORMATION
+========================= */
+
+.pnrinfo {
+    margin-top: 20px;
+}
+
+.pnrdetail {
+    padding: 20px;
+    border: none;
+    background-color: rgb(204, 204, 248);
+    color: black;
+
+    border-radius: 7px;
+}
+
+.pnrdetail h5 {
+    margin-bottom: 15px;
+}
+
+.text-pnr {
+    color: black;
+    margin-bottom: 0;
+}
+
+.text-pnr li {
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   PNR RESULT
+========================= */
+
+.pnrdetail.mt-3 {
+    margin-top: 20px !important;
+}
+
+.pnrdetail p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+    .pnrbody {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+
+    .col1 {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .row12 {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .row12card {
+        max-width: 500px;
+    }
+
+    .col2 {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card21 {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .pnrbody {
+        padding: 25px 15px;
+        min-height: auto;
+    }
+
+    .col1 {
+        padding: 10px 5px;
+    }
+
+    .row11 h2 {
+        font-size: 28px;
+    }
+
+    .row11 p {
+        font-size: 15px;
+    }
+
+    .row12 {
+        padding-top: 20px;
+    }
+
+    .col2 {
+        padding: 10px 0;
+    }
+
+    .card21 {
+        padding: 25px 20px;
+        border-radius: 8px;
+    }
+
+    .cardhead h4 {
+        font-size: 22px;
+    }
+
+    .pnrdetail {
+        padding: 15px;
+    }
+
+    .pnrdetail p {
+        font-size: 14px;
+        word-break: normal;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    .pnrbtn .btn {
+        font-size: 14px;
+    }
+}

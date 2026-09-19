@@ -1,0 +1,206 @@
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/admintrains.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+    <div class="adminall">    
+        <div class="bottombar">
+            <div class="bottomleft">
+                <ul class="nav sideup flex-column">
+                    <li class="nav-item railway-brand">
+                        <img src="{% static 'images/railway_logo.png' %}" alt="Indian Railways"  width="30" height="30">
+                        <span>INDIAN RAILWAYS</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="{% url 'admindash' %}">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="{% url 'admintrains' %}">Trains</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adminstation' %}">Stations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adminbooking' %}">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admincancellations' %}">Cancellations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adminuser' %}">Users</a>
+                    </li>
+                    
+                    <li class="admin-profile ">
+                        <a class="nav-link" href="{% url 'adminprofile' %}">Admin Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+
+
+
+            <div class="bottomright">
+                <div class="part1">
+                    <h2>Train Management</h2>                    
+                    <nav aria-label="breadcrumb" >
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'admindash' %}">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Trains
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+
+
+
+
+
+
+                <div class="part3 manage-trains card">
+                    <div class="manage-header">
+                        <div class="manage-header-left">
+                            <h3>Manage Trains</h3>
+                            <p>Add,edit,delete and view all trains</p>
+                        </div>
+                        <div class="manage-header-right">                        
+                            <button type="button" class="btn btn-primary"data-bs-toggle="modal"data-bs-target="#addTrain">
+                             + Add new train
+                            </button>
+                        </div>
+                    </div>
+                    <div class="manage-bottom">
+                        <form method="GET" class="d-flex" role="search">
+                            <input class="form-control me-2" type="search"  name="train_number"  placeholder="Search by Train Number" value="{{ train_number }}">
+                            <select name="source" class="form-control me-2">
+                                <option value="">Select Source</option>
+                                {% for station in stations %}
+                                    {% if source == station.id %}
+                                        <option value="{{ station.id }}" selected>
+                                            {{ station.station_name }}
+                                        </option>
+                                    {% else %}
+                                        <option value="{{ station.id }}">
+                                            {{ station.station_name }}
+                                        </option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+
+                            <!-- Destination -->
+                            <select name="destination" class="form-control me-2">
+                                <option value="">Select Destination</option>
+                                {% for station in stations %}
+                                    {% if destination == station.id %}
+                                        <option value="{{ station.id }}" selected>
+                                            {{ station.station_name }}
+                                        </option>
+                                    {% else %}
+                                        <option value="{{ station.id }}">
+                                            {{ station.station_name }}
+                                        </option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+
+                            <!-- Search -->
+                            <button type="submit" class="btn search-btn btn-primary">Search</button>
+                            <!-- Reset -->
+                            <a href="{% url 'admintrains' %}" class="btn reset-button btn-outline-primary">Reset</a>
+                        </form>
+                    </div>
+
+                    
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="part4">
+                    <div class="part4top">
+                        <h4>Trains on track :</h4>
+                    </div>
+                    <div class="part4body">
+                        <table class="table table-hover">
+                            <thead class="theader">
+                                <tr>
+                                <th scope="col">Train No.</th>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">From</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Departure</th>
+                                <th scope="col">Arrival</th>
+                                <th scope="col">Days</th>
+                                <th scope="col">Classes</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in page_obj %}
+                                <tr>
+                                    <td>{{ i.train_number }}</td>
+                                    <td>{{ i.train_name }}</td>
+                                    <td>{{ i.source }}</td>
+                                    <td>{{ i.destination }}</td>
+                                    <td>{{ i.departure }}</td>
+                                    <td>{{ i.arrival }}</td>
+                                    <td>{{ i.journey_days }}</td>
+                                    <td>{{ i.classes }}</td>
+                                    <td>{{ i.status }}</td>
+
+                                    <td class="actions">
+                                        <a href="#"class="action-btn action-icon edit-btn"title="Edit" data-bs-toggle="modal"data-bs-target="#editTrain{{ i.id }}">
+                                            <img src="{% static 'images/edit.png' %}"alt="Edit"></a>
+                                        <a href="#"class="action-btn action-icon delete-btn" title="Delete" data-bs-toggle="modal"data-bs-target="#deleteTrain{{ i.id }}">
+                                            <img src="{% static 'images/delete.jpg' %}"alt="Delete"></a>
+                                        <a href="{% url 'admintrainroute' i.id %}" class="action-btn action-icon" title="Manage Route">
+                                            <img src="{% static 'images/route_logo.jpg' %}"alt="Manage Route"></a>
+                                        <a href="{% url 'admincoach' i.id %}" class="action-btn action-icon"title="Manage Coach">
+                                            <img src="{% static 'images/coach.png' %}"alt="Manage Coach"></a>
+                                        <a href="{% url 'admintrainclass' i.id %}"class="action-btn action-icon"title="Manage Classes">
+                                            <img src="{% static 'images/class.png' %}"alt="Manage Classes"></a>
+
+                                    </td>
+                                </tr>
+
+                                {% include 'admin/adminedittrainpopup.html' %}
+
+                                <!-- DELETE TRAIN POPUP -->
+                                {% include 'admin/admindeletetrainpopup.html' %}
+
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <!-- PAGINATION -->
+                        {% include 'admin/admintrainpagination.html' %}
+                        
+                        <!-- ADD TRAIN POPUP -->
+                        {% include 'admin/adminaddtrainpopup.html' %}
+
+
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}
